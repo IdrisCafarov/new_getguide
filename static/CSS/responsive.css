@@ -1,0 +1,131 @@
+@media screen and (max-width: 1600px) {
+  #line1 {
+    position: absolute;
+    transform: scale(3);
+    left: 17%;
+    top: 45%;
+  }
+  #line2 {
+    position: absolute;
+    transform: scale(3);
+    left: 47%;
+    top: 40%;
+  }
+  #line3 {
+    position: absolute;
+    transform: scale(3);
+    left: 77%;
+    top: 45%;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  #line1 {
+    transform: scale(2.8);
+  }
+  #line2 {
+    transform: scale(2.8);
+  }
+  #line3 {
+    transform: scale(2.8);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #line1 {
+    transform: scale(2.6);
+  }
+  #line2 {
+    transform: scale(2.6);
+  }
+  #line3 {
+    transform: scale(2.6);
+  }
+}
+@media screen and (max-width: 1300px) {
+  #line1 {
+    transform: scale(2.4);
+  }
+  #line2 {
+    transform: scale(2.4);
+  }
+  #line3 {
+    transform: scale(2.4);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #line1 {
+    transform: scale(2);
+  }
+  #line2 {
+    transform: scale(2);
+  }
+  #line3 {
+    transform: scale(2);
+    left: 75%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #line1 {
+    transform: scale(1.8);
+  }
+  #line2 {
+    transform: scale(1.8);
+  }
+  #line3 {
+    transform: scale(1.8);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .achieve {
+    /* text-align: center; */
+    width: 146px;
+    height: 146px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* border-radius: 50%; */
+    /* position: relative; */
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .achieve {
+    width: 136px;
+    height: 136px;
+  }
+  #line1 {
+    transform: scale(1.5);
+  }
+  #line2 {
+    transform: scale(1.5);
+  }
+  #line3 {
+    transform: scale(1.5);
+  }
+}
+
+@media screen and (max-width: 920px) {
+    .achieve {
+      width: 126px;
+      height: 126px;
+    }
+    #line1 {
+      transform: scale(1.5);
+    }
+    #line2 {
+      transform: scale(1.5);
+    }
+    #line3 {
+      transform: scale(1.5);
+    }
+    .achieve p {
+        margin: 8px 0;
+        font-size: 15px;
+      }
+      .achieve h2 {
+        font: 30px "Euclid Medium";
+      }
+  }

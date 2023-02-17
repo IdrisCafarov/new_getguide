@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    <div class="signup-container">
+      <div class="signUpInner">
+        <div class="signup-heading login-heading">
+          <p>Login</p>
+          <p>Hello again!</p>
+          <div class="userSelectBtns">
+            <button class="guideBtn activeBtn">As Guide</button>
+            <button class="companyBtn">As Company</button>
+          </div>
+        </div>
+
+        <div class="signup-main guideSide">
+          <div class="signup-media">
+            <a
+              target="_blank"
+              href="https://www.google.com/"
+              href=""
+              class="one-signup-media"
+            >
+              <img src="{% static './images/google.png' %}" />
+              <p>with Google</p>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/"
+              class="one-signup-media"
+            >
+              <img src="{% static './images/facebook.png' %}" />
+              <p>with Facebook</p>
+            </a>
+          </div>
+          <div class="sign-borders">
+            <div class="sign-border"></div>
+            <p>or</p>
+            <div class="sign-border"></div>
+          </div>
+          <form method="post">
+            {% csrf_token %}
+            <div class="signup-inputs">
+              <div class="signup-input">
+                <label for="loginEmail"><p>Email</p></label>
+                {{form_guide.email|as_crispy_field}}
+              </div>
+              <div class="signup-input">
+                <label for="loginPass"><p>Password</p></label>
+                {{form_guide.password|as_crispy_field}}
+              </div>
+            </div>
+            <div class="signup-terms login-forgotPass">
+              <a href="./forgotPass.html">Forgot password?</a>
+            </div>
+            <button class="myBtn" name="btn_guide">Log in</button>
+          </form>
+        </div>
+
+        <div class="signup-main companySide hide">
+          <div class="signup-media">
+            <a
+              target="_blank"
+              href="https://www.google.com/"
+              href=""
+              class="one-signup-media"
+            >
+              <img src="{% static './images/google.png' %}" />
+              <p>with Google</p>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/"
+              class="one-signup-media"
+            >
+              <img src="{% static './images/facebook.png' %}" />
+              <p>with Facebook</p>
+            </a>
+          </div>
+          <div class="sign-borders">
+            <div class="sign-border"></div>
+            <p>or</p>
+            <div class="sign-border"></div>
+          </div>
+          <form method="post">
+            {% csrf_token %}
+            <div class="signup-inputs">
+              <div class="signup-input">
+                <label for="email"><p>Company Email</p></label>
+                {{form_company.email|as_crispy_field}}
+              </div>
+              <div class="signup-input">
+                <label for="password"><p>Password</p></label>
+                {{form_company.password|as_crispy_field}}
+              </div>
+            </div>
+            <div class="signup-terms login-forgotPass">
+              <a href="./forgotPass.html">Forgot password?</a>
+            </div>
+            <button class="myBtn" name="btn_company">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}

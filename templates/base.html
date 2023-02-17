@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+    <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+  </head>
+  <body>
+    <div class="main-header">
+      <div class="total container">
+        <div class="left-nav">
+          <div class="logo">
+            <a href="./index.html"
+              ><img src="{% static './images/Logo.png' %}" alt="loqo"
+            /></a>
+          </div>
+          <ul class="main-nav whiteNav">
+            <li><a href="./guides.html">Tour Guides</a></li>
+            <!-- <li><a href="#">Partners</a></li> -->
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li class="FAQ">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-right-nav">
+          <div class="main-lang">
+            Az
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <a href="./login.html">Log in</a>
+          <button class="main-sign">
+            <a href="./signup.html">Sign Up</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+{% block body %}
+
+{% endblock body %}
+
+
+
+    <div class="footerContainer">
+        <div class="footerBorders">
+          <div class="footer myWrapper">
+            <div class="foot1">
+              <div class="foot1Logo">
+                <a href="./index.html"><img src="./images/Logo.png" alt="" /></a>
+              </div>
+              <div class="foot1Socials">
+                <a href="" id="fb"
+                  ><i class="fa-brands fa-square-facebook"></i
+                ></a>
+                <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="foot2">
+              <h2>Customer Care</h2>
+              <p><a href="">Contact Us</a></p>
+              <p><a href="">Size Guide</a></p>
+              <p><a href="">My Order</a></p>
+              <p><a href=""> My Account </a></p>
+            </div>
+            <div class="foot3">
+              <h2>Shipping & Returns</h2>
+              <p><a href="">Shipping</a></p>
+              <p><a href="">Track Your Order</a></p>
+              <p><a href="">Returns and exchanges</a></p>
+              <p class="footerFaq">
+                <a href="./faq.html"
+                  >FAQ <i class="fa-light fa-comments-question"></i
+                ></a>
+              </p>
+            </div>
+            <div class="foot4">
+              <h2>Corporate</h2>
+              <p><a href="">Careers</a></p>
+              <p><a href="">Social Responsibility</a></p>
+              <p><a href="">Reseller</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="myWrapper">
+          <div class="copyright">
+            <i class="fa-light fa-copyright"></i>
+            2022 Getguide all rights reserved
+          </div>
+        </div>
+      </div>
+
+      <script src="{% static './JS/signup.js' %}"></script>
+    </body>
+  </html>
+
+
