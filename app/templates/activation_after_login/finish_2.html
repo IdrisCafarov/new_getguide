@@ -1,0 +1,54 @@
+{% extends 'base_activation.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <div class="accVerifyContainer">
+      <div class="accVerifyInner">
+        <h1>Account Verification</h1>
+
+        <div class="successLine dash2">
+            <span id="twentyFive"></span>
+            <span id="fifty"></span>
+            <span id="seventyFive"></span>
+        </div>
+
+        <div class="verifyStep secondStep">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label
+              ><p>First name</p>
+              {{form.first_name|as_crispy_field}}
+            </label>
+
+            <label
+              ><p>Last name</p>
+              {{form.last_name|as_crispy_field}}
+            </label>
+
+            {% comment %} <label
+              ><p>Location</p>
+              <input type="text" placeholder="EX: Baku, Azerbaijan" />
+            </label> {% endcomment %}
+
+            <div class="secondBottom">
+                <div class="uploadVideo">
+                    <p>Upload ID Image</p>
+                    <div class="addVideoFile">
+                      {{form.id_image|as_crispy_field}}
+                      <label for="file">Upload ID Image</label>
+                    </div>
+                  </div>
+                  <p>Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet  odio mattis. Class</p>
+            </div>
+            <div class="stepButtons">
+              <a href="{% url 'account:finish_1' %}" class="myBtn prevBtn">Previous</a>
+              <button class="myBtn nextBtn">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}

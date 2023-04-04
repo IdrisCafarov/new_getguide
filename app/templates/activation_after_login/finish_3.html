@@ -1,0 +1,80 @@
+{% extends 'base_activation.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <div class="accVerifyContainer">
+      <div class="accVerifyInner">
+        <h1>Account Verification</h1>
+
+        <div class="successLine dash3">
+            <span id="twentyFive"></span>
+            <span id="fifty"></span>
+            <span id="seventyFive"></span>
+        </div>
+
+
+        <div class="verifyStep thirdStep">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="thirdTop">
+              <p>Add identification photo</p>
+              <div class="addFile">
+                <input
+                  class="hiden"
+                  type="file"
+                  id="file"
+                  name="img"
+                  accept="image/*"
+                />
+                <label for="file">Upload Photo</label>
+              </div>
+            </div>
+
+            <div class="thirdBottom">
+              {% comment %} <label>
+                <p>Postal ID</p>
+                <input type="text" placeholder="EX: AZ5000" />
+              </label> {% endcomment %}
+
+              <label>
+                <p>Language</p>
+                {{form.languages|as_crispy_field}}
+              </label>
+
+              <label>
+                <p>Region</p>
+                {{form.regions|as_crispy_field}}
+              </label>
+
+              <label id="numInputLabel">
+                <p>Phone Number</p>
+                <div class="numberInput">
+                  <div class="countriesOptions">
+                    {% comment %} <img src="./images/numbers/aze.png" alt="" /> {% endcomment %}
+                    {% comment %} <i class="fa-regular fa-chevron-down"></i> {% endcomment %}
+                  </div>
+                  {{form.phone|as_crispy_field}}
+                </div>
+              </label>
+            </div>
+            <div class="stepButtons">
+              <a href="./dashboard2.html" class="myBtn prevBtn">Previous</a>
+              <button class="myBtn nextBtn">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="./JS/accVerify.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+      new MultiSelectTag('languages')
+      new MultiSelectTag('regions')
+  </script>
+
+
+{% endblock body %}

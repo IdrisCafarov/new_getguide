@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block body %}
+
+    <div class="myProfileContainer">
+      <div class="contForNav">
+        <div class="navigation">
+          <i id="profIcon" class="fa-light fa-user activeIcon"></i>
+          <i id="calendarIcon" class="fa-light fa-calendars"></i>
+          <i id="notIcon" class="fa-light fa-bell"></i>
+          <a href="{% url 'account:logout' %}">
+            <i class="fa-light fa-arrow-right-from-arc"></i>
+          </a>
+        </div>
+        <div class="myProfileInner personalInfo">
+          <div class="profileHeader"><p>Şəxsi məlumatlar</p></div>
+          <div class="profileBody">
+            <div class="proflePhoto">
+              <img src="{{request.user.get_avatar}}" alt="" />
+              <i class="fa-light fa-camera"></i>
+            </div>
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="profileInputs">
+                <label for="">
+                  <p>Ad</p>
+                  {{form.first_name|as_crispy_field}}
+                </label>
+                <label for="">
+                  <p>Soyad</p>
+                  {{form.last_name|as_crispy_field}}
+                </label>
+                <label for="">
+                  <p>E-mail</p>
+                  {{form.email|as_crispy_field}}
+                </label>
+                <label for="">
+                  <p>Mobil Nömrə</p>
+                  {{form.phone|as_crispy_field}}
+                </label>
+              </div>
+              <div class="profileBtn">
+                <button class="myBtn" type="submit">
+                  <i class="fa-light fa-pen-line"></i>
+                  Məlumatları yenilə
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="myProfileInner calendarPage none">
+          <div class="calendarHeader"><p>Calendar</p></div>
+          <div class="calendarBody">
+            <div class="row" >
+
+              <div class="col-lg-12">
+                  <h4 class="mb-3">Choose A Schedule Below</h4>
+                  <div class="d-flex flex-wrap align-items-center justify-content-between my-schedule mb-4">
+                     <div class="d-flex align-items-center justify-content-between">
+                          <div class="form-group mb-0">
+                              <select name="type" class="selectpicker form-control" data-style="py-0">
+                                  <option>Working Hours</option>
+                                  <option>Default Hours</option>
+                                  <option>Working Hours</option>
+                                  <option>Learning Hours</option>
+                              </select>
+                          </div>
+                          <div class="select-dropdown input-prepend input-append">
+                              <div class="btn-group">
+                                  <label data-toggle="dropdown">
+                                  <span class="dropdown-toggle search-query rounded btn bg-white btn-edit"><i class="las la-edit mr-0 text-center"></i></span><span class="search-replace"></span>
+                                  <span class="caret"><!--icon--></span>
+                                  </label>
+                                  <ul class="dropdown-menu w-100 border-none p-3">
+                                      <li><div class="item mb-2"><i class="ri-pencil-line mr-3"></i>Edit</div></li>
+                                      <li><div class="item"><i class="ri-delete-bin-6-line mr-3"></i>Delete</div></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="create-workform">
+                          <a href="#" data-toggle="modal" data-target="#date-event" class="btn btn-primary pr-5 position-relative">New Schedule<span class="add-btn"><i class="ri-add-line"></i></span></a>
+                      </div>
+                  </div>
+                  <h4 class="mb-3">Set Your weekly hours</h4>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="card card-block card-stretch">
+                              <div class="card-body">
+                                  <div id="calendar1" class="calendar-s"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+           <!-- Modal -->
+    <div class="modal fade" id="date-event" tabindex="-1" role="dialog" aria-hidden="true" >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="popup text-left">
+                      <h4 class="mb-3">Add Schedule</h4>
+                      <form action="https://templates.iqonic.design/" id="submit-schedule">
+                          <div class="content create-workform row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label class="form-label" for="schedule-title">Schedule For</label>
+                                      <input class="form-control" placeholder="Enter Title" type="text" name="title" id="schedule-title" required />
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label class="form-label" for="schedule-start-date">Start Date</label>
+                                      <input class="form-control basicFlatpickr date-input" placeholder="2020-06-20" type="text" name="title" id="schedule-start-date" required />
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label class="form-label" for="schedule-end-date">End Date</label>
+                                      <input class="form-control basicFlatpickr date-input" placeholder="2020-06-20" type="text" name="title" id="schedule-end-date" required />
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <input class="form-control" type="color" name="title" id="schedule-color" required />
+                                  </div>
+                              </div>
+                              <div class="col-md-12 mt-4">
+                                  <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                      <button class="btn btn-primary mr-4" data-dismiss="modal">Cancel</button>
+                                      <button class="btn btn-outline-primary" type="submit">Save</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="popup text-left" id="popup">
+              <h4 class="mb-3">Add Action</h4>
+              <div class="content create-workform">
+                  <div class="form-group">
+                    <h6 class="form-label mb-3">Copy Your Link</h6>
+                    <div class="input-group">
+                      <input type="text" class="form-control" readonly value="calendly.com/rickoshea1234">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"><i class="las la-link"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <h6 class="form-label mb-3">Email Your Link</h6>
+                    <div class="input-group">
+                      <input type="text" class="form-control" readonly value="calendly.com/rickoshea1234">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon3"><i class="las la-envelope"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <h6 class="form-label mb-3">Add to Your Website</h6>
+                    <div class="input-group">
+                      <input type="text" class="form-control" readonly value="calendly.com/rickoshea1234">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon4"><i class="las la-code"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-3">
+                      <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                          <button type="submit" data-dismiss="modal" class="btn btn-primary mr-4">Cancel</button>
+                          <button type="submit" data-dismiss="modal" class="btn btn-outline-primary">Save</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="myProfileInner notificationPage none">
+    <div class="profileHeader"><p>Notification</p></div>
+    <div class="notificationBody">
+      <div class="notificationLeft">
+        <div class="not activeNotification">
+          <div class="notContent">
+              Place 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
+          </div>
+          <div class="notLeft">
+            <span></span>
+            <p>Place your text here 1</p>
+          </div>
+          <div class="adFile">
+            <i class="fa-light fa-file-pen"></i>
+            Value
+          </div>
+        </div>
+        <div class="not">
+          <div class="notContent">
+              Place 2 Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
+          </div>
+          <div class="notLeft">
+            <span></span>
+            <p>Place your text here 2</p>
+          </div>
+          <div class="adFile">
+            <i class="fa-light fa-file-pen"></i>
+            Value
+          </div>
+        </div>
+        <div class="not">
+          <div class="notContent">
+              Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit.
+          </div>
+          <div class="notLeft">
+            <span></span>
+            <p>Place your text here 3</p>
+          </div>
+          <div class="adFile">
+            <i class="fa-light fa-file-pen"></i>
+            Value
+          </div>
+        </div>
+        <div class="not">
+          <div class="notContent">
+              Place 4 Ipsum Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
+          </div>
+          <div class="notLeft">
+            <span></span>
+            <p>Place your text here 4</p>
+          </div>
+          <div class="adFile">
+            <i class="fa-light fa-file-pen"></i>
+            Value
+          </div>
+        </div>
+      </div>
+      <div class="notificationRight">
+        <div class="rightHeading">
+          <p>September 9 /2023</p>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="rightBody">
+          <p>
+
+          </p>
+        </div>
+        <div class="rightNextPrev">
+          <i class="fa-solid fa-caret-left"></i>
+          <p>Value</p>
+          <i class="fa-solid fa-caret-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    {% endblock body %}

@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.captcha {
+  @import url(https://fonts.googleapis.com/css?family=Roboto);
+}
+.captcha .input-container {
+  background-color: rgb(249, 249, 249);
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  padding: 5px;
+  height: 74px;
+  width: 300px;
+  font-family: Roboto, sans-serif;
+  display: inline-block;
+}
+.captcha .input-container input {
+  margin-top: 28px;
+}
+.captcha img {
+  width: 32px;
+  display: inline;
+  margin-left: -60px;
+}
+.captcha span,
+.captcha a {
+  color: rgb(155, 155, 155);
+}
+.captcha .recaptcha {
+  font-size: 12px;
+  margin-left: -55px;
+  position: relative;
+  bottom: -10px;
+}
+.captcha a,
+.captcha .dash {
+  font-size: 8px;
+  text-decoration: none;
+  display: inline;
+  position: relative;
+  top: -22px;
+  right: -232px;
+}
+.captcha a:hover {
+  text-decoration: underline;
+}
+.captcha .triangle {
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(204, 204, 204);
+  border-top: 7px solid transparent;
+  position: relative;
+  left: 10px;
+  top: -55px;
+}
+.captcha .not-human {
+  width: 340px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 15px;
+  position: relative;
+  top: -55px;
+  left: 3px;
+}
+.captcha .not-human .captcha-code {
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  font-size: 18px;
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.captcha .not-human .captcha-code:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(74, 144, 226);
+}
+.captcha .not-human img {
+  display: inline-block;
+  position: relative;
+  left: 75px;
+  top: -80px;
+  width: 300px;
+  height: 57px;
+}
+.captcha .not-human .line {
+  width: 370px;
+  height: 1px;
+  background-color: rgb(204, 204, 204);
+  margin-top: 90px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.captcha .not-human .img {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -36px;
+  margin: 0 4px 75px 4px;
+  display: inline-block;
+  cursor: pointer;
+  background-size: 24px 24px;
+  opacity: 0.55;
+}
+.captcha .not-human .img.replay {
+  background: url(https://www.gstatic.com/recaptcha/api2/refresh.png);
+}
+.captcha .not-human .img.audio {
+  background: url(https://www.gstatic.com/recaptcha/api2/audio.png);
+}
+.captcha .not-human .img.info {
+  background: url(https://www.gstatic.com/recaptcha/api2/info.png);
+}
+.captcha .not-human .img:hover {
+  opacity: 1;
+}
+.captcha .not-human .verify {
+  float: right;
+  position: relative;
+  top: -42px;
+  margin-right: 5px;
+  background-color: rgb(74, 144, 226);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.captcha .disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}/*# sourceMappingURL=sass.css.map */

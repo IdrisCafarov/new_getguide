@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+    <link rel="stylesheet" href="{% static './CSS/responsive.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="total container">
+        <div class="left-nav">
+          <div class="logo">
+            <a href="./index.html"><img src="{% static './images/whitelogo.png' %}" alt="loqo" /></a>
+          </div>
+          <ul class="nav whiteNav homeNav">
+            <li><a href="./guides.html">Tour Guides</a></li>
+            <!-- <li><a href="#">Partners</a></li> -->
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li class="FAQ"><a href="./faq.html">FAQ <i class="fa-light fa-comments-question"></i></a></li>
+          </ul>
+        </div>
+        <ul class="right-nav">
+          <div class="main-right-nav">
+            <div class="main-lang">
+              Az
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div class="headerProfile">
+              <a href="{% url 'account:my_profile' %}">
+                <img src="{{request.user.get_avatar}}" alt="" />
+              </a>
+
+            </div>
+            {% else %}
+            <a href="{% url 'account:login' %}">Log in</a>
+            <button class="sign"><a href="{% url 'account:register' %}">Sign Up</a></button>
+            {% endif %}
+          </div>
+        </ul>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Section 1 Start  -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-total">
+          <div class="hero-text">
+            <h1>Find a tour guide to show you around</h1>
+            <div class="searchInput">
+              <input type="text" placeholder="Where do you want to visit?" />
+              <button class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+              </button>
+            </div>
+          </div>
+          <video width="500" height="400" controls>
+            <source src="{% static './videos/testvideo.m4v' %}" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+    <!-- Section 1 End  -->
+
+    <!-- Section 2 Start  -->
+    <section class="achievements">
+      <div class="pink"></div>
+      <div class="green"></div>
+      <div class="yellow"></div>
+      <div class="heading">
+        <h2>Our achievements</h2>
+        <p>
+          As in business, we believe that competition encourages innovation.
+        </p>
+      </div>
+      <div class="container">
+        <div class="achieves">
+          <img id="line1" src="{% static './images/line1.png' %}" alt="">
+          <img id="line2" src="{% static './images/line2.png' %}" alt="">
+          <img id="line3" src="{% static './images/line3.png' %}" alt="">
+          <div class="achieve">
+            <!-- <img src="./images/line1.png" alt=""> -->
+            <div id="burst-8"></div>
+            <h2 class="blue">78</h2>
+            <p>Guides</p>
+            <!-- <div class="right-border"></div> -->
+          </div>
+          <div class="achieve">
+            <div id="burst-8"></div>
+            <h2 class="eight">870</h2>
+            <p>Travelers</p>
+            <!-- <div class="right-border"></div> -->
+          </div>
+          <div class="achieve">
+            <!-- <img src="./images/line1.png" alt=""> -->
+            <div id="burst-8"></div>
+            <h2 class="eight">870</h2>
+            <p>Travelers</p>
+            <!-- <div class="right-border"></div> -->
+          </div>
+          <div class="achieve">
+            <div id="burst-8"></div>
+            <h2 class="three">34</h2>
+            <p>Partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section 2 End  -->
+
+    <!-- Section 3 Start  -->
+    <section class="Guides">
+      <div class="container">
+        <div class="heading">
+          <h2>Our Guides</h2>
+        </div>
+        <div class="guides">
+          {% for guide in guides %}
+          <div class="one-guide">
+            <div class="guide-image">
+              <img src="{% static './images/test.webp' %}" />
+            </div>
+
+            <div class="guide-text">
+              <div class="guide-top-text">
+                <p>{{guide.first_name}} {{guide.last_name}}</p>
+                <p>
+                  Manage simple to complex projects across multiple teams,
+                  departments
+                </p>
+              </div>
+              <div class="guide-bottom-text">
+                <p>20,99<span>₼</span></p>
+
+                <p>23 Reviews</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+        <div id="all" class="forBtn">
+          <a href="./guides.html">See All</a
+          ><i class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+    </section>
+    <!-- Section 3 End  -->
+
+    <!-- Section 4 Start  -->
+    <section class="best-selling">
+      <div class="container">
+        <div class="selling">
+          <div class="left-best-selling">
+            <div class="pink-linear">
+              <div class="best-video">
+                <video controls>
+                  <source src="{% static './videos/testvideo.m4v' %}" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="right-best-selling">
+            <p>Best Selling Product of the month</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis sit
+              sed at auctor lacus dictum amet aliquam cursus. Et purus quis
+              accumsan at id vel ut quis sagittis.
+            </p>
+            <button class="sell-best">Get your guide</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section 4 End  -->
+
+    <div class="ourBlog myWrapper">
+      <h1>Our Blogs</h1>
+      <div class="blogs">
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog1.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog2.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog3.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog1.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog2.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+        <!-- One Blog  -->
+        <div class="oneBlog">
+          <div class="blogImg">
+            <img src="{% static './images/blogs/blog3.png' %}" alt="" />
+          </div>
+          <div class="blogContent">
+            <h1>
+              Help your team transition to remote with this essential guide
+            </h1>
+          </div>
+          <p class="blogDate">31 iyul, 2021</p>
+        </div>
+        <!-- One Blog End -->
+      </div>
+      <div class="forBtn">
+        <a href="./blogs.html" id="addBlogs">
+          See All <i class="fa-solid fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="largestProgram myWrapper">
+      <div class="largestHeader">
+        <h1>Getguide is the world’s largest Program</h1>
+      </div>
+      <div class="largestProgramBody">
+        <div class="largestBodyImg">
+          <img src="{% static './images/largestProgramBg.png' %}" alt="" />
+          <div class="textBox">
+            <h1>The Impact Of The event Marketing</h1>
+            <p>
+              Only a quid it's all gone to pot say codswallop loo tinkety tonk
+              old fruit Oxford Why, porkies cheeky bugger tickety-boo butty a
+              load of old.
+            </p>
+            <button>Create a trip</button>
+            <img class="circle" src="{% static './images/circle.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerContainer">
+      <div class="footerBorders">
+        <div class="footer myWrapper">
+          <div class="foot1">
+            <div class="foot1Logo">
+              <a href="./index.html"><img src="{% static './images/Logo.png' %}" alt="" /></a>
+            </div>
+            <div class="foot1Socials">
+              <a href="" id="fb"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
+              <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="foot2">
+            <h2>Customer Care</h2>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">Size Guide</a></p>
+            <p><a href="">My Order</a></p>
+            <p><a href=""> My Account </a></p>
+          </div>
+          <div class="foot3">
+            <h2>Shipping & Returns</h2>
+            <p><a href="">Shipping</a></p>
+            <p><a href="">Track Your Order</a></p>
+            <p><a href="">Returns and exchanges</a></p>
+            <p class="footerFaq"><a href="./faq.html">FAQ <i class="fa-light fa-comments-question"></i></a></p>
+          </div>
+          <div class="foot4">
+            <h2>Corporate</h2>
+            <p><a href="">Careers</a></p>
+            <p><a href="">Social Responsibility</a></p>
+            <p><a href="">Reseller</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="myWrapper">
+        <div class="copyright">
+          <i class="fa-light fa-copyright"></i>
+          2022 Getguide all rights reserved
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static './JS/app.js' %}"></script>
+  </body>
+</html>

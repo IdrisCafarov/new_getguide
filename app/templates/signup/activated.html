@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+    <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+  </head>
+  <body>
+    <div class="main-header">
+      <div class="total container">
+        <div class="left-nav">
+          <div class="logo">
+            <a href="./index.html"
+              ><img src="{% static './images/Logo.png' %}" alt="loqo"
+            /></a>
+          </div>
+          <ul class="main-nav whiteNav successPage">
+            <li><a href="./guides.html">Tour Guides</a></li>
+            <!-- <li><a href="#">Partners</a></li> -->
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li class="FAQ">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-right-nav successPage">
+          <div class="main-lang">
+            Az
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <a href="./login.html">Log in</a>
+          <button class="main-sign">
+            <a href="./signup.html">Sign Up</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-container clickActivationPage">
+      <div class="succesFullModal">
+        <img src="{% static './images/successTick.png' %}" alt="">
+        <h1>Your account has been successfully activated!</h1>
+        <p>You can log in to your account</p>
+        <button class="myBtn"><a href="{% url 'account:login' %}">Log in </a></button>
+      </div>
+    </div>
+  </body>
+</html>

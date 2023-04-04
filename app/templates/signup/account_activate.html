@@ -1,0 +1,94 @@
+{% load static %}
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./CSS/style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+    <style>
+      a {
+        transition: 0.3s;
+        color: white;
+        background-color: #3366ff;
+        padding: 16px 99px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+      }
+      a:hover {
+        background-color: #ffffff;
+        color: #3366ff;
+        border-color: #3366ff;
+      }
+      section{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="verifyPageContainer"
+      style="
+
+        width: 50%;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+      "
+    >
+      <div class="verifyContent" style="padding: 20px">
+        <div
+          class="verifyContentLogo"
+          style="
+            border-bottom: 1px solid #e4e9f2;
+            padding-bottom: 30px;
+            width: 40%;
+          "
+        >
+          <img
+            src="cid:Logo.png"
+            alt=""
+          />
+        </div>
+        <div class="verifyTexts" style="margin-bottom: 40px">
+          <p>Welcome {{user.first_name}} {{user.last_name}}!</p>
+          <p>Thank you for registering</p>
+          <p>
+            Almost there. Please click the button and <a href="" style="padding: 0; text-decoration: none; border-radius: 0; background-color: transparent; color: #3366ff; border: 0;">verify</a> your email address
+            acount.
+          </p>
+        </div>
+        <a href="http://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}" style="text-decoration: none">VERIFY EMAIL ADRESS</a>
+        <div
+          class="verifyFooter"
+          style="display: flex; align-items: center; margin-top: 60px"
+        >
+          <i
+            class="fa-light fa-copyright"
+            style="margin-right: 7px; font-size: 14px; color: #3e4b6c"
+          ></i>
+          <p style="font-size: 14px; color: #3e4b6c">
+            2022 Getguide all rights reserved
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+{% endautoescape %}

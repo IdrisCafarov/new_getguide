@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <div class="signup-container">
+      <div class="signUpInner">
+        <div class="signup-heading">
+          <p>Sign up</p>
+        </div>
+
+        <div class="signup-main guideSide">
+          {% comment %} <div class="signup-media">
+            <a
+              target="_blank"
+              href="https://www.google.com/"
+              href=""
+              class="one-signup-media"
+            >
+              <img src="./images/google.png" />
+              <p>with Google</p>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/"
+              class="one-signup-media"
+            >
+              <img src="./images/facebook.png" />
+              <p>with Facebook</p>
+            </a>
+          </div> {% endcomment %}
+          <div class="sign-borders">
+            <div class="sign-border"></div>
+            <p>or</p>
+            <div class="sign-border"></div>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="signup-inputs">
+              <div class="signup-input">
+                <label for="signUpName"><p>Email</p></label>
+                {{form.email|as_crispy_field}}
+              </div>
+              <div class="signup-input">
+                <label for="signUpEmail"><p>Password1</p></label>
+                {{form.password1|as_crispy_field}}
+              </div>
+              <div class="signup-input">
+                <label for="signUpPass"><p>Password2</p></label>
+                {{form.password2|as_crispy_field}}
+              </div>
+            </div>
+            <div class="signAs browsers" >
+              <h3>Sign up as:</h3>
+
+              <ul>
+                <li>
+                  <input class="checkboxes" type="checkbox" id="guide" name="guide" required/>
+                  <label for="guide">Guide</label>
+                </li>
+                <li>
+                  <input class="checkboxes" type="checkbox" id="company" name="company" required/>
+                  <label for="company">Company</label>
+                </li>
+                <li>
+                  <input class="checkboxes" type="checkbox" id="driver" name="driver" required/>
+                  <label for="driver">Driver</label>
+                </li>
+              </ul>
+            </div>
+            <div class="signup-terms">
+              <p>
+                By signing up, you agree with <a>Terms</a> and
+                <a href="">Conditions</a>
+              </p>
+            </div>
+            <div class="signUpBtn">
+              <button class="myBtn" type="submit">Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}

@@ -1,0 +1,27 @@
+{% extends 'base_activation.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="accVerifyContainer">
+      <div class="accVerifyInner">
+        <h1>Account Verification</h1>
+
+        <div class="successLine dash4">
+            <span id="twentyFive"></span>
+            <span id="fifty"></span>
+            <span id="seventyFive"></span>
+        </div>
+
+        <div class="fourthStep">
+            <div class="succesFullModal">
+                <img src="{% static './images/successTick.png' %}" alt="">
+                <h1>Your request has been successfully sent to us!</h1>
+                <p>We will inform you after activation of your account</p>
+                <a href="{% url 'product:index' %}" class="myBtn">Main Page</a>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock body %}

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+    <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+  </head>
+  <body>
+    <div class="main-header">
+      <div class="total container">
+        <div class="left-nav">
+          <div class="logo">
+            <a href="{% url 'product:index' %}"
+              ><img src="{% static './images/Logo.png' %}" alt="loqo"
+            /></a>
+          </div>
+          <ul class="main-nav whiteNav">
+            <li><a href="./guides.html">Tour Guides</a></li>
+            <!-- <li><a href="#">Partners</a></li> -->
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li class="FAQ">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-right-nav">
+          <div class="main-lang">
+            Az
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <a href="{% url 'account:login' %}">Log in</a>
+          <button class="main-sign">
+            <a href="{% url 'account:register' %}">Sign Up</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-container clickActivationPage">
+        <div class="clickActivationModal">
+            <h1>Please click the activation link we sent to your email</h1>
+            <p>An email has been sent to your email address containing an activation link. <br> Please click on the link to activate your account. <br> If you do not receive the email within a few minutes, please check your spam folder.</p>
+        </div>
+    </div>
+
+  </body>
+</html>
