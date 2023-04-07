@@ -1,86 +1,194 @@
-let calendar = document.querySelector('.calendar')
-
-const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-isLeapYear = (year) => {
-    return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
-}
-
-getFebDays = (year) => {
-    return isLeapYear(year) ? 29 : 28
-}
-
-generateCalendar = (month, year) => {
-
-    let calendar_days = calendar.querySelector('.calendar-days')
-    let calendar_header_year = calendar.querySelector('#year')
-
-    let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-    calendar_days.innerHTML = ''
-
-    let currDate = new Date()
-    if (!month) month = currDate.getMonth()
-    if (!year) year = currDate.getFullYear()
-
-    let curr_month = `${month_names[month]}`
-    month_picker.innerHTML = curr_month
-    calendar_header_year.innerHTML = year
-
-    // get first day of month
-    
-    let first_day = new Date(year, month, 1)
-
+const isLeapYear = (year) => {
+    return (
+      (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
+      (year % 100 === 0 && year % 400 === 0)
+    );
+  };
+  const getFebDays = (year) => {
+    return isLeapYear(year) ? 29 : 28;
+  };
+  let calendar = document.querySelector(".calendar");
+  const month_names = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month_picker = document.querySelector("#month-picker");
+  const dayTextFormate = document.querySelector(".day-text-formate");
+  const timeFormate = document.querySelector(".time-formate");
+  const dateFormate = document.querySelector(".date-formate");
+  
+  month_picker.onclick = () => {
+    month_list.classList.remove("hideonce");
+    month_list.classList.remove("hide");
+    month_list.classList.add("show");
+    dayTextFormate.classList.remove("showtime");
+    dayTextFormate.classList.add("hidetime");
+    timeFormate.classList.remove("showtime");
+    timeFormate.classList.add("hideTime");
+    dateFormate.classList.remove("showtime");
+    dateFormate.classList.add("hideTime");
+  };
+  
+  const generateCalendar = (month, year) => {
+    let calendar_days = document.querySelector(".calendar-days");
+    calendar_days.innerHTML = "";
+    let calendar_header_year = document.querySelector("#year");
+    let days_of_month = [
+      31,
+      getFebDays(year),
+      31,
+      30,
+      31,
+      30,
+      31,
+      31,
+      30,
+      31,
+      30,
+      31,
+    ];
+  
+    let currentDate = new Date();
+  
+    month_picker.innerHTML = month_names[month];
+  
+    calendar_header_year.innerHTML = year;
+  
+    let first_day = new Date(year, month);
+  
     for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
-        let day = document.createElement('div')
-        if (i >= first_day.getDay()) {
-            day.classList.add('calendar-day-hover')
-            day.innerHTML = i - first_day.getDay() + 1
-            day.innerHTML += `<span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>`
-            if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
-                day.classList.add('curr-date')
-            }
+      let day = document.createElement("div");
+  
+      if (i >= first_day.getDay()) {
+        day.innerHTML = i - first_day.getDay() + 1;
+  
+        if (
+          i - first_day.getDay() + 1 === currentDate.getDate() &&
+          year === currentDate.getFullYear() &&
+          month === currentDate.getMonth()
+        ) {
+          day.classList.add("current-date");
         }
-        calendar_days.appendChild(day)
+      }
+      calendar_days.appendChild(day);
     }
-}
-
-let month_list = calendar.querySelector('.month-list')
-
-month_names.forEach((e, index) => {
-    let month = document.createElement('div')
-    month.innerHTML = `<div data-month="${index}">${e}</div>`
-    month.querySelector('div').onclick = () => {
-        month_list.classList.remove('show')
-        curr_month.value = index
-        generateCalendar(index, curr_year.value)
-    }
-    month_list.appendChild(month)
-})
-
-let month_picker = calendar.querySelector('#month-picker')
-
-month_picker.onclick = () => {
-    month_list.classList.add('show')
-}
-
-let currDate = new Date()
-
-let curr_month = {value: currDate.getMonth()}
-let curr_year = {value: currDate.getFullYear()}
-
-generateCalendar(curr_month.value, curr_year.value)
-
-document.querySelector('#prev-year').onclick = () => {
-    --curr_year.value
-    generateCalendar(curr_month.value, curr_year.value)
-}
-
-document.querySelector('#next-year').onclick = () => {
-    ++curr_year.value
-    generateCalendar(curr_month.value, curr_year.value)
-}
-
+  };
+  
+  let month_list = calendar.querySelector(".month-list");
+  month_names.forEach((e, index) => {
+    let month = document.createElement("div");
+    month.innerHTML = `<div>${e}</div>`;
+  
+    month_list.append(month);
+    month.onclick = () => {
+      currentMonth.value = index;
+      generateCalendar(currentMonth.value, currentYear.value);
+      month_list.classList.replace("show", "hide");
+      dayTextFormate.classList.remove("hideTime");
+      dayTextFormate.classList.add("showtime");
+      timeFormate.classList.remove("hideTime");
+      timeFormate.classList.add("showtime");
+      dateFormate.classList.remove("hideTime");
+      dateFormate.classList.add("showtime");
+    };
+  });
+  
+  (function () {
+    month_list.classList.add("hideonce");
+  })();
+  document.querySelector("#pre-year").onclick = () => {
+    --currentYear.value;
+    generateCalendar(currentMonth.value, currentYear.value);
+  };
+  document.querySelector("#next-year").onclick = () => {
+    ++currentYear.value;
+    generateCalendar(currentMonth.value, currentYear.value);
+  };
+  
+  let currentDate = new Date();
+  let currentMonth = { value: currentDate.getMonth() };
+  let currentYear = { value: currentDate.getFullYear() };
+  generateCalendar(currentMonth.value, currentYear.value);
+  
+  const todayShowTime = document.querySelector(".time-formate");
+  const todayShowDate = document.querySelector(".date-formate");
+  
+  const currshowDate = new Date();
+  const showCurrentDateOption = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long",
+  };
+  const currentDateFormate = new Intl.DateTimeFormat(
+    "en-US",
+    showCurrentDateOption
+  ).format(currshowDate);
+  todayShowDate.textContent = currentDateFormate;
+  setInterval(() => {
+    const timer = new Date();
+    const option = {
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    };
+    const formateTimer = new Intl.DateTimeFormat("en-us", option).format(timer);
+    let time = `${`${timer.getHours()}`.padStart(
+      2,
+      "0"
+    )}:${`${timer.getMinutes()}`.padStart(
+      2,
+      "0"
+    )}: ${`${timer.getSeconds()}`.padStart(2, "0")}`;
+    todayShowTime.textContent = formateTimer;
+  }, 1000);
+  
+  // -------------------------
+  // -------CUSTOMIZE---------
+  // -------------------------
+  let modal = document.querySelector(".calendar .modal");
+  let yes = document.getElementById("yes");
+  let oneDay = document.querySelectorAll(".calendar-days div");
+  let closeBtn = document.querySelector(".modal .close");
+  let selectedDay = [];
+  oneDay.forEach((d) => {
+    d.addEventListener("click", (e) => {
+      console.log(selectedDay.length);
+      if (e.target.classList.contains("disabled")) {
+        let question = confirm(
+          "Today is selected as busy. Do you want to delete?"
+        );
+        if (question == true) {
+          selectedDay = selectedDay.filter((item) => item !== e.target);
+          e.target.classList.remove("disabled");
+        }
+      } else {
+        let response = confirm("Have a busy day?");
+        if (response == true) {
+          selectedDay.push(e.target);
+        } else {
+          return;
+        }
+      }
+  
+      [...selectedDay].map((a) => {
+        a.classList.add("disabled");
+      });
+    });
+  });
+  
+  // let value = 3;
+  // let ca = [1, 2, 3, 4];
+  // ca = ca.filter((item) => item !== value);
+  // console.log(ca);
+  
