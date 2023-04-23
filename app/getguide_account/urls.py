@@ -16,6 +16,11 @@ urlpatterns = [
     path('finish_sucess',finish_success, name="finish_success"),
     path('myProfile', my_profile, name='my_profile'),
     path('forgot_password',forgot_password,name="forgot_password"),
+    path("add_busy_date/", BusyDateView.as_view({'post': 'create',}), name="add_busy_date"),
+    path("show_busy_date/", UserBusyDateView.as_view({'get': 'list',}), name="show_busy_date"),
+    path("show_busy_date/<pk>/", UserBusyDateView.as_view({'get': 'retrieve',}), name="show_busy_date_detail"),
+
+
 
     path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
         activate, name='activate'),

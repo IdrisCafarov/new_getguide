@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'product',
     'core',
     #installed packages
+    'rest_framework',
     'ckeditor',
     'crispy_forms',
     'crispy_bootstrap5',

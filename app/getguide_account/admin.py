@@ -22,6 +22,8 @@ User = get_user_model()
 
 
 admin.site.register(GuideImage)
+admin.site.register(BusyDates)
+
 
 
 class ImageInline(admin.StackedInline):

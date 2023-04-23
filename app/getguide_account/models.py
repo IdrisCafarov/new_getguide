@@ -151,15 +151,11 @@ def on_change(sender, instance: MyUser, **kwargs):
 
             email.send()
 
-
-
-
-
-
-
-
-
-
 class GuideImage(models.Model):
     image = models.ImageField(upload_to="Guide Images")
     user = models.ForeignKey(MyUser,on_delete=models.CASCADE,related_name="images")
+
+
+class BusyDates(models.Model):
+    date = models.DateField()
+    user = models.ForeignKey(MyUser,on_delete=models.CASCADE, related_name="busy_dates")
