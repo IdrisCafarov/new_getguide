@@ -304,7 +304,7 @@ def forgot_password(request):
 
 class BusyDateView(viewsets.ModelViewSet):
     queryset = BusyDates.objects.all()
-    parser_classes = (MultiPartParser, FormParser)
+    # parser_classes = (MultiPartParser, FormParser)
     serializer_class = BusyDateSerializer
 
 class UserBusyDateView(viewsets.ModelViewSet):
