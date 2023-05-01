@@ -10,4 +10,5 @@ crispy-bootstrap5==0.7
 django-phonenumber-field==7.0.2
 phonenumbers
 Babel==2.12.1
+django-cors-headers==3.13.0
 django-recaptcha==3.0.0

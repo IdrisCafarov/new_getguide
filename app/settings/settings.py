@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'six',
     "phonenumber_field",
     "captcha",
+    'corsheaders',
 
 ]
 
@@ -63,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -100,7 +103,7 @@ DATABASES = {
     }
 }
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

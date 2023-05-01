@@ -136,13 +136,12 @@ const generateCalendar = (month, year) => {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: "1",
-          dates: new Date(
-            `${selectedDay} " " ${selectedMonth} " " ${selectedYear}`
-          ),
+          user: 4,
+          date: `${selectedYear}-${selectedMonth}-${selectedDay}`
+          ,
         }),
       })
         .then((response) => response.json())
