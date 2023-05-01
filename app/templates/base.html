@@ -23,17 +23,25 @@
     />
     <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
     <!-- for calendar  -->
-    <link rel="stylesheet" href="https://templates.iqonic.design/calendify/html/assets/css/backend.min.css?v=1.0.1">
-    <link rel="stylesheet" href="https://templates.iqonic.design/calendify/html/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://templates.iqonic.design/calendify/html/assets/css/backend.min.css?v=1.0.1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://templates.iqonic.design/calendify/html/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
     <!-- Simple Calendar  -->
-    <link rel='stylesheet' href="{% static './CSS/calendar.css' %}" />
+    <link rel="stylesheet" href="{% static './CSS/calendar.css' %}" />
   </head>
   <body>
     <div class="main-header">
       <div class="total container">
         <div class="left-nav">
           <div class="logo">
-            <a href="/"><img src="{% static './images/Logo.png' %}" alt="loqo" /></a>
+            <a href="/"
+              ><img src="{% static './images/Logo.png' %}" alt="loqo"
+            /></a>
           </div>
           <ul class="main-nav whiteNav">
             <li><a href="./guides.html">Tour Guides</a></li>
@@ -58,93 +66,74 @@
           </div>
           {% else %}
           <a href="{% url 'account:login' %}">Log in</a>
-          <button class="sign"><a href="{% url 'account:register' %}">Sign Up</a></button>
+          <button class="sign">
+            <a href="{% url 'account:register' %}">Sign Up</a>
+          </button>
           {% endif %}
         </div>
       </div>
     </div>
 
-{% block body %}
+    {% block body %} {% endblock body %}
 
-{% endblock body %}
-
-
-
-<div class="footerContainer">
-  <div class="footerBorders">
-    <div class="footer myWrapper">
-      <div class="foot1">
-        <div class="foot1Logo">
-          <a href="./index.html"><img src="{% static './images/Logo.png' %}" alt="" /></a>
+    <div class="footerContainer">
+      <div class="footerBorders">
+        <div class="footer myWrapper">
+          <div class="foot1">
+            <div class="foot1Logo">
+              <a href="./index.html"
+                ><img src="{% static './images/Logo.png' %}" alt=""
+              /></a>
+            </div>
+            <div class="foot1Socials">
+              <a href="" id="fb"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
+              <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="foot2">
+            <h2>Customer Care</h2>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">Size Guide</a></p>
+            <p><a href="">My Order</a></p>
+            <p><a href=""> My Account </a></p>
+          </div>
+          <div class="foot3">
+            <h2>Shipping & Returns</h2>
+            <p><a href="">Shipping</a></p>
+            <p><a href="">Track Your Order</a></p>
+            <p><a href="">Returns and exchanges</a></p>
+            <p class="footerFaq">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </p>
+          </div>
+          <div class="foot4">
+            <h2>Corporate</h2>
+            <p><a href="">Careers</a></p>
+            <p><a href="">Social Responsibility</a></p>
+            <p><a href="">Reseller</a></p>
+          </div>
         </div>
-        <div class="foot1Socials">
-          <a href="" id="fb"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
-          <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="myWrapper">
+        <div class="copyright">
+          <i class="fa-light fa-copyright"></i>
+          2022 Getguide all rights reserved
         </div>
-      </div>
-      <div class="foot2">
-        <h2>Customer Care</h2>
-        <p><a href="">Contact Us</a></p>
-        <p><a href="">Size Guide</a></p>
-        <p><a href="">My Order</a></p>
-        <p><a href=""> My Account </a></p>
-      </div>
-      <div class="foot3">
-        <h2>Shipping & Returns</h2>
-        <p><a href="">Shipping</a></p>
-        <p><a href="">Track Your Order</a></p>
-        <p><a href="">Returns and exchanges</a></p>
-        <p class="footerFaq">
-          <a href="./faq.html"
-            >FAQ <i class="fa-light fa-comments-question"></i
-          ></a>
-        </p>
-      </div>
-      <div class="foot4">
-        <h2>Corporate</h2>
-        <p><a href="">Careers</a></p>
-        <p><a href="">Social Responsibility</a></p>
-        <p><a href="">Reseller</a></p>
       </div>
     </div>
-  </div>
-  <div class="myWrapper">
-    <div class="copyright">
-      <i class="fa-light fa-copyright"></i>
-      2022 Getguide all rights reserved
-    </div>
-  </div>
-</div>
 
-
-
-
-
-
-<script src="{% static './JS/calendar.js' %}"></script>
-<script src="{% static './JS/app.js' %}"></script>
-<script src="{% static './JS/signup.js' %}"></script>
-
-
-
-<script src="{% static './JS/calendarJs/backendBundleMin.js' %}"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script src="{% static './JS/calendarJs/jsCustomizer.js' %}"></script>
-
-    <!-- Fullcalender Javascript -->
-    <script src="{% static './JS/calendarJs/coreMain.js' %}"></script>
-    <script src="{% static './JS/calendarJs/daygridMain.js' %}"></script>
-    <script src="{% static './JS/calendarJs/timegridMain.js' %}"></script>
-    <script src="{% static './JS/calendarJs/listMain.js' %}"></script>
-    <script src="{% static './JS/calendarJs/interactionMain.js' %}"></script>
+    <script src="{% static './JS/calendar.js' %}"></script>
+    <script src="{% static './JS/dates.js' %}"></script>
+    <script src="{% static './JS/app.js' %}"></script>
+    <script src="{% static './JS/signup.js' %}"></script>
 
     <!-- app JavaScript -->
-    <script src="{% static './JS/calendarJs/assetsApp.js' %}"></script>  </body>
     <script src="{% static './JS/myProfile.js' %}"></script>
-</body>
+  </body>
 </html>

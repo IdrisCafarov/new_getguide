@@ -5,7 +5,7 @@ from getguide_account.models import *
 class BusyDateSerializer(serializers.ModelSerializer):
     class Meta:
         model = BusyDates
-        fields = ['id','date']
+        fields = ['id','date', 'user']
 
 
 

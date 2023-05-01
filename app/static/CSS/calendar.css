@@ -27,6 +27,7 @@
 }
 .calendar-header {
   /* background: #9796f0; */
+  /* background-color: red; */
   background: #3366ff;
   display: flex;
   justify-content: space-between;
@@ -100,8 +101,8 @@
   display: flex;
   align-items: center;
 }
-.year-change pre{
-    margin-bottom: 0;
+.year-change pre {
+  margin-bottom: 0;
 }
 .year-change {
   height: 30px;
@@ -149,14 +150,16 @@
 }
 .month-list {
   position: relative;
-  left: 0;
-  top: 0;
+  left: 10%;
+  top: -50%;
   background-color: #ebebeb;
   color: var(--light-text);
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 5px;
+  gap: 1px;
   border-radius: 20px;
+  width: 70%;
+  height: 300px;
 }
 .month-list > div {
   display: grid;
@@ -296,6 +299,10 @@
   }
 }
 
+.busy-date {
+  background-color: red;
+}
+
 /* -------------------------
   -------CUSTOMIZE---------
   ------------------------- */
@@ -354,4 +361,8 @@
 }
 .disabled {
   opacity: 0.2 !important;
+}
+
+.border {
+  border: 1px solid red !important;
 }
