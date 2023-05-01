@@ -140,7 +140,7 @@ const generateCalendar = (month, year) => {
         },
         body: JSON.stringify({
           user: 4,
-          date: `${selectedYear}-${selectedMonth}-${selectedDay}`
+          date: `${selectedYear}-05-${selectedDay}`
           ,
         }),
       })
