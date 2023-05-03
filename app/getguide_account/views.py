@@ -17,6 +17,10 @@ from django.utils import timezone
 from django.core.mail import EmailMessage
 from email.mime.image import MIMEImage
 import os
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
+
 from getguide_account.serializers import *
 from rest_framework.parsers import MultiPartParser,FormParser,JSONParser
 from rest_framework import viewsets
@@ -300,8 +304,7 @@ def forgot_password(request):
 
     return render(request, 'login/forgot_password.html', {'form':form})
 
-
-
+@method_decorator(csrf_exempt, name='dispatch')
 class BusyDateView(viewsets.ModelViewSet):
     queryset = BusyDates.objects.all()
     # parser_classes = (MultiPartParser, FormParser)

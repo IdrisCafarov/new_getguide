@@ -68,6 +68,13 @@ month_picker.onclick = () => {
   dateFormate.classList.add("hideTime");
 };
 
+
+function getCsrfToken() {
+  const csrfTokenElement = document.querySelector('meta[name="csrf-token"]');
+  return csrfTokenElement ? csrfTokenElement.content : '';
+}
+
+
 const generateCalendar = (month, year) => {
   let calendar_days = document.querySelector(".calendar-days");
   calendar_days.innerHTML = "";
@@ -137,6 +144,7 @@ const generateCalendar = (month, year) => {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          "X-CSRFToken": getCsrfToken(),
         },
         body: JSON.stringify({
           user: 4,

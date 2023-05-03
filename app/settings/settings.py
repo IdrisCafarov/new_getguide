@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-738b2%!iee(3$%4v(^*s*-ci1sl9mqru6f%n2__%8+c)l51yw2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -162,32 +162,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
-# AUTHENTICATION_BACKENDS = [
-#     'django.contrib.auth.backends.ModelBackend',
-#     'social_core.backends.google.GoogleOAuth2',
-# ]
-
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'SCOPE': [
-#             'profile',
-#             'email',
-#         ],
-#         'AUTH_PARAMS': {
-#             'access_type': 'online',
-#         }
-#     }
-# }
-
-# SITE_ID = 2
-# LOGIN_URL = 'account:login'
-# LOGIN_REDIRECT_URL = 'product:index'
-# LOGOUT_URL = '/'
-# LOGOUT_REDIRECT_URL = 'account:login'
-
-
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '693523855290-va0ucoj03eqts7p95eg2ejr3corrnogh.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 
