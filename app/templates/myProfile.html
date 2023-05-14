@@ -6,188 +6,195 @@
 
 {% block body %}
 
-    <div class="myProfileContainer">
-      <div class="contForNav">
-        <div class="navigation">
-          <i id="profIcon" class="fa-light fa-user activeIcon"></i>
-          <i id="calendarIcon" class="fa-light fa-calendars"></i>
-          <i id="notIcon" class="fa-light fa-bell"></i>
-          <a href="{% url 'account:logout' %}">
-            <i class="fa-light fa-arrow-right-from-arc"></i>
-          </a>
+<div class="myProfileContainer">
+  <div class="contForNav">
+    <div class="navigation">
+      <i id="profIcon" class="fa-light fa-user activeIcon"></i>
+      <i id="calendarIcon" class="fa-light fa-calendars"></i>
+      <i id="notIcon" class="fa-light fa-bell"></i>
+      <a href="{% url 'account:logout' %}">
+        <i class="fa-light fa-arrow-right-from-arc"></i>
+      </a>
+    </div>
+    <div class="myProfileInner personalInfo none">
+      <div class="profileHeader">
+        <p>Şəxsi məlumatlar</p>
+      </div>
+      <div class="profileBody">
+        <div class="proflePhoto">
+          <img src="{{request.user.get_avatar}}" alt="" />
+          <i class="fa-light fa-camera"></i>
         </div>
-        <div class="myProfileInner personalInfo none">
-          <div class="profileHeader"><p>Şəxsi məlumatlar</p></div>
-          <div class="profileBody">
-            <div class="proflePhoto">
-              <img src="{{request.user.get_avatar}}" alt="" />
-              <i class="fa-light fa-camera"></i>
-            </div>
-            <form action="" method="POST">
-              {% csrf_token %}
-              <div class="profileInputs">
-                <label for="">
-                  <p>Ad</p>
-                  {{form.first_name|as_crispy_field}}
-                </label>
-                <label for="">
-                  <p>Soyad</p>
-                  {{form.last_name|as_crispy_field}}
-                </label>
-                <label for="">
-                  <p>E-mail</p>
-                  {{form.email|as_crispy_field}}
-                </label>
-                <label for="">
-                  <p>Mobil Nömrə</p>
-                  {{form.phone|as_crispy_field}}
-                </label>
-              </div>
-              <div class="profileBtn">
-                <button class="myBtn" type="submit">
-                  <i class="fa-light fa-pen-line"></i>
-                  Məlumatları yenilə
-                </button>
-              </div>
-            </form>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="profileInputs">
+            <label for="">
+              <p>Ad</p>
+              {{form.first_name|as_crispy_field}}
+            </label>
+            <label for="">
+              <p>Soyad</p>
+              {{form.last_name|as_crispy_field}}
+            </label>
+            <label for="">
+              <p>E-mail</p>
+              {{form.email|as_crispy_field}}
+            </label>
+            <label for="">
+              <p>Mobil Nömrə</p>
+              {{form.phone|as_crispy_field}}
+            </label>
           </div>
-        </div>
+          <div class="profileBtn">
+            <button class="myBtn" type="submit">
+              <i class="fa-light fa-pen-line"></i>
+              Məlumatları yenilə
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-        <div class="myProfileInner calendarPage">
-          <div class="calendarHeader"><p>Calendar</p></div>
-          <div class="calendarBody">
-            <div class="calendar">
-              <div class="calendar-header">
-                <span class="month-picker" id="month-picker"> May </span>
-                <div class="year-picker" id="year-picker">
-                  <span class="year-change" id="pre-year">
-                    <pre><</pre>
-                  </span>
-                  <span id="year">2020 </span>
-                  <span class="year-change" id="next-year">
-                    <pre>></pre>
-                  </span>
-                </div>
-              </div>
-              
+    <div class="myProfileInner calendarPage">
+      <div class="calendarHeader">
+        <p>Calendar</p>
+      </div>
+      <div class="calendarBody">
+        <div class="calendar">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker"> May </span>
+            <div class="year-picker" id="year-picker">
+              <span class="year-change" id="pre-year">
+                <pre><</pre>
+              </span>
+              <span id="year">2020 </span>
+              <span class="year-change" id="next-year">
+                <pre>></pre>
+              </span>
+            </div>
+          </div>
 
-              <div class="calendar-body">
-                <div class="calendar-week-days">
-                  <div>Sun</div>
-                  <div>Mon</div>
-                  <div>Tue</div>
-                  <div>Wed</div>
-                  <div>Thu</div>
-                  <div>Fri</div>
-                  <div>Sat</div>
-                </div>
-                <div class="calendar-days"></div>
-              </div>
-              <div class="calendar-footer"></div>
-              <div class="date-time-formate">
-                <div class="day-text-formate">TODAY</div>
-                <div class="date-time-value">
-                  <div class="time-formate">02:51:20</div>
-                  <div class="date-formate">23 - july - 2022</div>
-                </div>
-              </div>
-              <div class="month-list"></div>
 
-              <!-- <div class="modal">
-                <span class="close">&#10005</span>
+          <div class="calendar-body">
+            <div class="calendar-week-days">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="calendar-footer"></div>
+          <div class="date-time-formate">
+            <div class="day-text-formate">TODAY</div>
+            <div class="date-time-value">
+              <div class="time-formate">02:51:20</div>
+              <div class="date-formate">23 - july - 2022</div>
+            </div>
+          </div>
+          <div class="month-list"></div>
+
+          <div class="modal">
+                <span class="close" onclick="close_modal()">&#10005</span>
                 <h2>Have a busy day?</h2>
                 <div class="buttons">
                   <button  id="yes">Yes</button>
+                  <button  id="no" onclick="close_modal()">No</button>
                 </div>
-              </div> -->
+              </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="myProfileInner notificationPage none">
+      <div class="profileHeader">
+        <p>Notification</p>
+      </div>
+      <div class="notificationBody">
+        <div class="notificationLeft">
+          <div class="not activeNotification">
+            <div class="notContent">
+              Place 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dicta nostrum similique nam
+              labore explicabo voluptatibus sint obcaecati nihil magnam.
             </div>
-    </div>
-  </div>
+            <div class="notLeft">
+              <span></span>
+              <p>Place your text here 1</p>
+            </div>
+            <div class="adFile">
+              <i class="fa-light fa-file-pen"></i>
+              Value
+            </div>
+          </div>
+          <div class="not">
+            <div class="notContent">
+              Place 2 Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint
+              obcaecati nihil magnam.
+            </div>
+            <div class="notLeft">
+              <span></span>
+              <p>Place your text here 2</p>
+            </div>
+            <div class="adFile">
+              <i class="fa-light fa-file-pen"></i>
+              Value
+            </div>
+          </div>
+          <div class="not">
+            <div class="notContent">
+              Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit.
+            </div>
+            <div class="notLeft">
+              <span></span>
+              <p>Place your text here 3</p>
+            </div>
+            <div class="adFile">
+              <i class="fa-light fa-file-pen"></i>
+              Value
+            </div>
+          </div>
+          <div class="not">
+            <div class="notContent">
+              Place 4 Ipsum Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint
+              obcaecati nihil magnam.
+            </div>
+            <div class="notLeft">
+              <span></span>
+              <p>Place your text here 4</p>
+            </div>
+            <div class="adFile">
+              <i class="fa-light fa-file-pen"></i>
+              Value
+            </div>
+          </div>
+        </div>
+        <div class="notificationRight">
+          <div class="rightHeading">
+            <p>September 9 /2023</p>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="rightBody">
+            <p>
 
-
-  <div class="myProfileInner notificationPage none">
-    <div class="profileHeader"><p>Notification</p></div>
-    <div class="notificationBody">
-      <div class="notificationLeft">
-        <div class="not activeNotification">
-          <div class="notContent">
-              Place 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
+            </p>
           </div>
-          <div class="notLeft">
-            <span></span>
-            <p>Place your text here 1</p>
+          <div class="rightNextPrev">
+            <i class="fa-solid fa-caret-left"></i>
+            <p>Value</p>
+            <i class="fa-solid fa-caret-right"></i>
           </div>
-          <div class="adFile">
-            <i class="fa-light fa-file-pen"></i>
-            Value
-          </div>
-        </div>
-        <div class="not">
-          <div class="notContent">
-              Place 2 Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
-          </div>
-          <div class="notLeft">
-            <span></span>
-            <p>Place your text here 2</p>
-          </div>
-          <div class="adFile">
-            <i class="fa-light fa-file-pen"></i>
-            Value
-          </div>
-        </div>
-        <div class="not">
-          <div class="notContent">
-              Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit.
-          </div>
-          <div class="notLeft">
-            <span></span>
-            <p>Place your text here 3</p>
-          </div>
-          <div class="adFile">
-            <i class="fa-light fa-file-pen"></i>
-            Value
-          </div>
-        </div>
-        <div class="not">
-          <div class="notContent">
-              Place 4 Ipsum Adipisicing elit. Pariatur dicta nostrum similique nam labore explicabo voluptatibus sint obcaecati nihil magnam.
-          </div>
-          <div class="notLeft">
-            <span></span>
-            <p>Place your text here 4</p>
-          </div>
-          <div class="adFile">
-            <i class="fa-light fa-file-pen"></i>
-            Value
-          </div>
-        </div>
-      </div>
-      <div class="notificationRight">
-        <div class="rightHeading">
-          <p>September 9 /2023</p>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <div class="rightBody">
-          <p>
-
-          </p>
-        </div>
-        <div class="rightNextPrev">
-          <i class="fa-solid fa-caret-left"></i>
-          <p>Value</p>
-          <i class="fa-solid fa-caret-right"></i>
         </div>
       </div>
     </div>
   </div>
-          </div>
-
-
-        </div>
-
-      </div>
-    </div>
+</div>
 
 
 
-    {% endblock body %}
+
+{% endblock body %}

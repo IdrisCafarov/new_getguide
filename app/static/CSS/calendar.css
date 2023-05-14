@@ -298,9 +298,14 @@
     margin: 5px 0px;
   }
 }
-
 .busy-date {
-  background-color: red;
+  pointer-events: none;
+  opacity: 0.6 !important;
+  border: 1px solid red !important;
+}
+.past-day {
+  pointer-events: none !important;
+  opacity: 0.3 !important;
 }
 
 /* -------------------------
