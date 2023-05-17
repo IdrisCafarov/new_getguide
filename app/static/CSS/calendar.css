@@ -112,6 +112,7 @@
   place-items: center;
   margin: 0px 10px;
   cursor: pointer;
+  align-items: center;
 }
 .year-change:hover {
   background-color: var(--light-btn);
