@@ -95,25 +95,56 @@ const calendar_funk = (busy) => {
 
     for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
       let day = document.createElement("div");
-
       if (i >= first_day.getDay()) {
         day.innerHTML = i - first_day.getDay() + 1;
+        // Disable The Past Days
+        let currDay = currentDate.getDate();
+        let currMonth = currentDate.getMonth() + 1;
+        let currYear = currentDate.getFullYear();
+        let oneMonth = document.getElementById("month-picker").innerText;
+        let oneDay = day.innerHTML;
+        let oneYear = document.getElementById("year").innerText;
+        let oneMonthIndex = month_names.indexOf(oneMonth) + 1;
+        if (
+          oneYear < currYear ||
+          oneMonthIndex < currMonth ||
+          (oneDay < currDay &&
+            oneMonthIndex <= currMonth &&
+            oneYear <= currYear)
+        ) {
+          day.classList.add("past-day");
+        }
+        if (oneYear > currYear) {
+          day.classList.remove("past-day");
+        }
+        // Disable The Past Days End-------------
       }
       calendar_days.appendChild(day);
       busy.map((e) => {
-        let busy_day = e.split("-")[2].replace("0", "");
-        let busy_month = Number(e.split("-")[1].replace("0", "")) - 1;
+        let busy_day =
+          e.split("-")[2][0] == "0"
+            ? e.split("-")[2].replace("0", "")
+            : e.split("-")[2];
+        let busy_month =
+          Number(
+            e.split("-")[1][0] == "0"
+              ? e.split("-")[1].replace("0", "")
+              : e.split("-")[1]
+          ) - 1;
         let busy_year = e.split("-")[0];
         if (
           month_names[busy_month] ===
             document.getElementById("month-picker").innerText &&
           document.getElementById("year").innerText === busy_year &&
-          day.innerHTML === busy_day.replace("0", "")
+          day.innerHTML === busy_day
         ) {
           day.classList.add("busy-date");
         }
       });
       day.setAttribute("onclick", "send_data_api(this)");
+      if (day.innerHTML == "") {
+        day.classList.add("emptyDate");
+      }
     }
   };
   month_list.innerHTML = "";
@@ -209,7 +240,6 @@ const send_data_api = (day) => {
         showBusyDate();
         modal.classList.remove("showModal");
       },
-
       error: function (xhr) {
         console.log(xhr);
       },
