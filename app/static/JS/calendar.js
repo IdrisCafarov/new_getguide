@@ -37,7 +37,6 @@ const getFebDays = (year) => {
   return isLeapYear(year) ? 29 : 28;
 };
 
-
 month_picker.onclick = () => {
   month_list.classList.remove("hideonce");
   month_list.classList.remove("hide");
@@ -52,17 +51,17 @@ month_picker.onclick = () => {
 
 function getCsrfToken() {
   const csrfTokenElement = document.querySelector('meta[name="csrf-token"]');
-  return csrfTokenElement ? csrfTokenElement.content : '';
+  return csrfTokenElement ? csrfTokenElement.content : "";
 }
 
 const showBusyDate = async () => {
   await fetch("http://localhost:8000/show_busy_date/")
     .then((res) => res.json())
     .then((res) => {
-      let arr = []
-      let user = res.find(e => e.id == user_id)
-      user.dates.map(e => arr.push(e.date))
-      calendar_funk(arr)
+      let arr = [];
+      let user = res.find((e) => e.id == user_id);
+      user.dates.map((e) => arr.push(e.date));
+      calendar_funk(arr);
     });
 };
 showBusyDate();
@@ -107,7 +106,7 @@ const calendar_funk = (busy) => {
         let busy_year = e.split("-")[0];
         if (
           month_names[busy_month] ===
-          document.getElementById("month-picker").innerText &&
+            document.getElementById("month-picker").innerText &&
           document.getElementById("year").innerText === busy_year &&
           day.innerHTML === busy_day.replace("0", "")
         ) {
@@ -117,7 +116,7 @@ const calendar_funk = (busy) => {
       day.setAttribute("onclick", "send_data_api(this)");
     }
   };
-  month_list.innerHTML = ""
+  month_list.innerHTML = "";
   month_names.forEach((e, index) => {
     let month = document.createElement("div");
     month.innerHTML = `<div>${e}</div>`;
@@ -180,9 +179,7 @@ const calendar_funk = (busy) => {
     )}: ${`${timer.getSeconds()}`.padStart(2, "0")}`;
     todayShowTime.textContent = formateTimer;
   }, 1000);
-}
-
-
+};
 
 const send_data_api = (day) => {
   modal.classList.add("showModal");
@@ -209,17 +206,17 @@ const send_data_api = (day) => {
         date: `${selectedYear}-${monthIndex}-${selectedDay}`,
       }),
       success: function (response) {
-        showBusyDate()
-        modal.classList.remove("showModal")
+        showBusyDate();
+        modal.classList.remove("showModal");
       },
+
       error: function (xhr) {
         console.log(xhr);
-      }
+      },
     });
-  })
-}
-
+  });
+};
 
 const close_modal = () => {
   modal.classList.remove("showModal");
-}
+};
