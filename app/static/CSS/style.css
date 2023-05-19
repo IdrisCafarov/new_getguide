@@ -511,8 +511,12 @@ header {
 /* Home Section 1 */
 
 .hero {
-  height: 650px;
-  background: linear-gradient(90.19deg, #59acfb 0.08%, #7d54fd 99.76%);
+  height: 700px;
+  /* background: linear-gradient(90.19deg, #59acfb 0.08%, #7d54fd 99.76%); */
+  background-image: url("../images/bakuGradient.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .sign {
   border: none;
@@ -558,44 +562,69 @@ header {
   justify-content: center;
   align-items: center;
 }
-.hero-text {
-  width: 45%;
-  margin: 70px 0;
-}
 .hero-text h1 {
   font: normal 600 60px "Euclid Bold";
   color: var(--white);
 }
 .hero-total {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-}
-.searchInput {
-  margin: 40px 0;
   position: relative;
+  z-index: 0;
 }
-.searchInput input {
-  outline: none;
-  width: 100%;
-  height: 70px;
-  border-radius: 8px;
-  border: none;
-  padding: 20px;
-  color: var(--5C6881);
-  font: normal 500 20px "Euclid Medium";
-}
-.search {
-  cursor: pointer;
+.hero-total .busImage {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: #3366ff;
-  border: none;
-  height: 50px;
-  padding: 10px 16px;
-  border-radius: 8px;
-  color: var(--white);
+  top: 130%;
+  left: -70%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  transition: 0.5 ease-in;
 }
+.busImage.busActive {
+  left: 70%;
+}
+.hero-total .userSelectBtns {
+  margin: 50px 0;
+}
+.hero-total .userSelectBtns .myBtn.selectedBtn {
+  background-color: #fff !important;
+  color: #243cf4;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.hero-total .userSelectBtns button:nth-child(1) {
+  margin-right: 20px;
+}
+.hero-total .heroInputs {
+  border-radius: 8px;
+  padding: 13px 22px;
+  background-color: #00000041;
+  display: flex;
+  align-items: center;
+}
+.hero-total .heroInputs .heroInput:nth-child(2) {
+  margin: 0 38px;
+}
+.hero-total .heroInputs .heroInput {
+  width: 30%;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 5px;
+}
+.hero-total .heroInputs input {
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+}
+
 .heading {
   padding: 50px 0;
   display: flex;
@@ -2736,7 +2765,7 @@ span,
 .activeNotification {
   background: rgba(235, 240, 255, 0.78);
 }
-.notificationLeft .not .notContent{
+.notificationLeft .not .notContent {
   display: none;
 }
 .notificationLeft .notLeft {
@@ -3088,9 +3117,6 @@ span,
 /* Calendar in Profile End ---- */
 /* My Profile Page End --- */
 
-
-
-
 #error_1_id_email {
   font-family: "Euclid Light";
   color: red;
@@ -3110,4 +3136,3 @@ span,
   font-family: "Euclid Light";
   color: red;
 }
-

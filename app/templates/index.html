@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% if user.is_authenticated %}
-    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="csrf-token" content="{{ csrf_token }}" />
     {% endif %}
 
     <title>Document</title>
     <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
-    <link rel="stylesheet" href="{% static './CSS/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './CSS/responsive.css' %}" />
     <link
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
@@ -27,14 +27,20 @@
       <div class="total container">
         <div class="left-nav">
           <div class="logo">
-            <a href="./index.html"><img src="{% static './images/whitelogo.png' %}" alt="loqo" /></a>
+            <a href="./index.html"
+              ><img src="{% static './images/whitelogo.png' %}" alt="loqo"
+            /></a>
           </div>
           <ul class="nav whiteNav homeNav">
             <li><a href="./guides.html">Tour Guides</a></li>
             <!-- <li><a href="#">Partners</a></li> -->
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./about.html">About Us</a></li>
-            <li class="FAQ"><a href="./faq.html">FAQ <i class="fa-light fa-comments-question"></i></a></li>
+            <li class="FAQ">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </li>
           </ul>
         </div>
         <ul class="right-nav">
@@ -48,11 +54,12 @@
               <a href="{% url 'account:my_profile' %}">
                 <img src="{{request.user.get_avatar}}" alt="" />
               </a>
-
             </div>
             {% else %}
             <a href="{% url 'account:login' %}">Log in</a>
-            <button class="sign"><a href="{% url 'account:register' %}">Sign Up</a></button>
+            <button class="sign">
+              <a href="{% url 'account:register' %}">Sign Up</a>
+            </button>
             {% endif %}
           </div>
         </ul>
@@ -64,19 +71,48 @@
     <section class="hero">
       <div class="container">
         <div class="hero-total">
+          <img class="busImage" src="../static/images/bus.png" alt="" />
           <div class="hero-text">
-            <h1>Find a tour guide to show you around</h1>
-            <div class="searchInput">
-              <input type="text" placeholder="Where do you want to visit?" />
-              <button class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-              </button>
-            </div>
+            <h1>Lorem ipsum dolor sit amet mamed</h1>
           </div>
-          <video width="500" height="400" controls>
-            <source src="{% static './videos/testvideo.m4v' %}" type="video/mp4" />
-          </video>
+          <div class="userSelectBtns">
+            <button id="guideBtn" class="myBtn selectedBtn">GUIDE</button>
+            <button id="driverBtn" class="myBtn">DRIVER</button>
+          </div>
+          <div class="heroInputs forGuide">
+            <div class="heroInput">
+              <i
+                class="fa-sharp fa-light fa-house-tree fa-lg"
+                style="color: #1a71ff"
+              ></i>
+              <input type="text" placeholder="Region" />
+            </div>
+            <div class="heroInput">
+              <i
+                class="fa-solid fa-calendar-days fa-lg"
+                style="color: #1a71ff"
+              ></i>
+              <input type="text" placeholder="Date" />
+            </div>
+            <button class="myBtn">Get Started</button>
+          </div>
+          <div class="heroInputs forDriver none">
+            <div class="heroInput">
+              <i
+                class="fa-sharp fa-light fa-house-tree fa-lg"
+                style="color: #1a71ff"
+              ></i>
+              <input type="text" placeholder="Region" />
+            </div>
+            <div class="heroInput">
+              <i
+                class="fa-solid fa-calendar-days fa-lg"
+                style="color: #1a71ff"
+              ></i>
+              <input type="text" placeholder="Date" />
+            </div>
+            <button class="myBtn">Get Started</button>
+          </div>
         </div>
       </div>
     </section>
@@ -95,9 +131,9 @@
       </div>
       <div class="container">
         <div class="achieves">
-          <img id="line1" src="{% static './images/line1.png' %}" alt="">
-          <img id="line2" src="{% static './images/line2.png' %}" alt="">
-          <img id="line3" src="{% static './images/line3.png' %}" alt="">
+          <img id="line1" src="{% static './images/line1.png' %}" alt="" />
+          <img id="line2" src="{% static './images/line2.png' %}" alt="" />
+          <img id="line3" src="{% static './images/line3.png' %}" alt="" />
           <div class="achieve">
             <!-- <img src="./images/line1.png" alt=""> -->
             <div id="burst-8"></div>
@@ -157,7 +193,6 @@
             </div>
           </div>
           {% endfor %}
-
         </div>
         <div id="all" class="forBtn">
           <a href="./guides.html">See All</a
@@ -175,7 +210,10 @@
             <div class="pink-linear">
               <div class="best-video">
                 <video controls>
-                  <source src="{% static './videos/testvideo.m4v' %}" type="video/mp4" />
+                  <source
+                    src="{% static './videos/testvideo.m4v' %}"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
             </div>
@@ -298,7 +336,11 @@
               load of old.
             </p>
             <button>Create a trip</button>
-            <img class="circle" src="{% static './images/circle.png' %}" alt="" />
+            <img
+              class="circle"
+              src="{% static './images/circle.png' %}"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -309,10 +351,14 @@
         <div class="footer myWrapper">
           <div class="foot1">
             <div class="foot1Logo">
-              <a href="./index.html"><img src="{% static './images/Logo.png' %}" alt="" /></a>
+              <a href="./index.html"
+                ><img src="{% static './images/Logo.png' %}" alt=""
+              /></a>
             </div>
             <div class="foot1Socials">
-              <a href="" id="fb"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="" id="fb"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
               <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
               <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
               <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
@@ -330,7 +376,11 @@
             <p><a href="">Shipping</a></p>
             <p><a href="">Track Your Order</a></p>
             <p><a href="">Returns and exchanges</a></p>
-            <p class="footerFaq"><a href="./faq.html">FAQ <i class="fa-light fa-comments-question"></i></a></p>
+            <p class="footerFaq">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </p>
           </div>
           <div class="foot4">
             <h2>Corporate</h2>
