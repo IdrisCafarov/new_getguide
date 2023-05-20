@@ -1,12 +1,16 @@
 let guideBtn = document.getElementById("guideBtn");
 let driverBtn = document.getElementById("driverBtn");
-
+let guideInput = document.querySelector(".forGuide");
+let driverInput = document.querySelector(".forDriver");
+let bus = document.querySelector(".busImage");
 guideBtn.addEventListener("click", () => {
-  console.log("hello");
   if (driverBtn.classList.contains("selectedBtn")) {
     driverBtn.classList.remove("selectedBtn");
   }
   guideBtn.classList.add("selectedBtn");
+  guideInput.classList.remove("none");
+  driverInput.classList.add("none");
+  bus.classList.remove("busActive");
 });
 
 driverBtn.addEventListener("click", () => {
@@ -14,7 +18,7 @@ driverBtn.addEventListener("click", () => {
     guideBtn.classList.remove("selectedBtn");
   }
   driverBtn.classList.add("selectedBtn");
+  guideInput.classList.add("none");
+  driverInput.classList.remove("none");
+  bus.classList.add("busActive");
 });
-
-let a = [1, 2, 3, 4, 5];
-console.log(a);

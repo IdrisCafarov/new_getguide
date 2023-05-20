@@ -566,6 +566,12 @@ header {
   font: normal 600 60px "Euclid Bold";
   color: var(--white);
 }
+.heroInputs.forDriver.none {
+  display: none;
+}
+.heroInputs.forGuide.none {
+  display: none;
+}
 .hero-total {
   display: flex;
   flex-direction: column;
@@ -580,10 +586,12 @@ header {
   z-index: -1;
   transform: translate(-50%, -50%);
   opacity: 0.8;
-  transition: 0.5 ease-in;
+  transition: 0.5s ease-in;
 }
 .busImage.busActive {
   left: 70%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in;
 }
 .hero-total .userSelectBtns {
   margin: 50px 0;
