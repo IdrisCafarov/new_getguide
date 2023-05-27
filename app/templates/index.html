@@ -165,7 +165,7 @@
     <!-- Section 2 End  -->
 
     <!-- Section 3 Start  -->
-    <section class="Guides">
+    {% comment %} <section class="Guides">
       <div class="container">
         <div class="heading">
           <h2>Our Guides</h2>
@@ -199,7 +199,7 @@
           ><i class="fa-solid fa-angle-right"></i>
         </div>
       </div>
-    </section>
+    </section> {% endcomment %}
     <!-- Section 3 End  -->
 
     <!-- Section 4 Start  -->
@@ -235,84 +235,24 @@
     <div class="ourBlog myWrapper">
       <h1>Our Blogs</h1>
       <div class="blogs">
+        {% for blog in blogs|slice:':6' %}
         <!-- One Blog  -->
         <div class="oneBlog">
           <div class="blogImg">
-            <img src="{% static './images/blogs/blog1.png' %}" alt="" />
+            <img style="width:486px ;height:349px;object-fit:cover;" src="{{blog.image.url}}" alt="" />
           </div>
           <div class="blogContent">
             <h1>
-              Help your team transition to remote with this essential guide
+              <a href="www.google.com">
+              {{blog.name}}
+              </a>
             </h1>
           </div>
-          <p class="blogDate">31 iyul, 2021</p>
+          <p class="blogDate">{{blog.created_date|date:"d M, Y"}}</p>
         </div>
         <!-- One Blog End -->
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img src="{% static './images/blogs/blog2.png' %}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img src="{% static './images/blogs/blog3.png' %}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img src="{% static './images/blogs/blog1.png' %}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img src="{% static './images/blogs/blog2.png' %}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img src="{% static './images/blogs/blog3.png' %}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
+        {% endfor %}
+
       </div>
       <div class="forBtn">
         <a href="./blogs.html" id="addBlogs">

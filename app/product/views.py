@@ -18,7 +18,7 @@ def index(request):
     context = {}
 
     guides = user.objects.filter(is_guide=True)
-    blogs = Blogs.objects.all()
+    blogs = Blog.objects.all()
 
     context["guides"] = guides
     context['blogs'] = blogs

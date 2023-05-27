@@ -7,13 +7,13 @@ from django import forms
 
 from .models import *
 from django import forms
-from phonenumber_field.widgets import PhoneNumberPrefixWidget
+# from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
-class ContactForm(forms.ModelForm):
-    class Meta:
-        widgets = {
-            'phone': PhoneNumberPrefixWidget(),
-        }
+# class ContactForm(forms.ModelForm):
+#     class Meta:
+#         widgets = {
+#             'phone': PhoneNumberPrefixWidget(),
+#         }
 
 
 
@@ -23,6 +23,8 @@ User = get_user_model()
 
 admin.site.register(GuideImage)
 admin.site.register(BusyDates)
+admin.site.register(Language)
+admin.site.register(Region)
 
 
 
@@ -59,7 +61,7 @@ class MyUserAdmin(UserAdmin):
     list_display_links=('first_name','last_name','email')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups','is_guide','is_company','is_driver','is_accepted')
     inlines = [ImageInline,]
-    form = ContactForm
+    # form = ContactForm
     # search_fields = ('first_name', 'last_name', 'email')
     # ordering = ('-date_joined',)
     # filter_horizontal = ('groups', 'user_permissions',)

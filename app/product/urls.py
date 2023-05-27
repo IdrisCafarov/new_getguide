@@ -7,4 +7,5 @@ app_name = 'product'
 urlpatterns = [
     path('', index, name='index'),
     path('faq/', Faq, name='faq'),
+    # path('blog_detail/<id>/')
 ]

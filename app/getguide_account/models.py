@@ -23,6 +23,18 @@ from django.dispatch import receiver
 USER_MODEL = settings.AUTH_USER_MODEL
 
 
+class Language(models.Model):
+    name = models.CharField(max_length=50,unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Region(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 
 
 
@@ -31,13 +43,13 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(_('username'), null=True, max_length=100, unique=False)
     first_name = models.CharField(_('first name'), max_length=255, blank=True, )
     company_name = models.CharField(_('company name'), max_length=50, blank=True)
-    phone = PhoneNumberField(_("phone number"), blank=True, null=True)
+    phone = models.CharField(_("phone number"), blank=True, null=True, max_length=15)
     birthday = models.DateField(_("birth date"), blank=True, null=True)
     # usertype = models.IntegerField(verbose_name="Cins",choices=USERTYPE,null=True,blank=True,default=1)
 
-    languages = models.CharField(_('Languages'), null=True, blank=True, max_length=300)
+    languages = models.ManyToManyField(Language,null=True,blank=True)
 
-    regions = models.CharField(_("Regions"), null=True, blank=True, max_length=300)
+    regions = models.ManyToManyField(Region,null=True,blank=True)
 
 
     image = models.FileField(_("image"),null=True,blank=True,upload_to="user_pp")

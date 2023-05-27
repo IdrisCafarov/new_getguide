@@ -56,14 +56,7 @@ class RegisterForm(UserCreationForm):
         except User.DoesNotExist:
             return email
         raise forms.ValidationError('Bu email artıq mövcuddur.Yenisini yoxlayın!')
-    # def clean_username(self):
-    #     username = self.cleaned_data.get('username')
 
-    #     try:
-    #         match = MyUser.objects.get(username=username)
-    #     except User.DoesNotExist:
-    #         return username
-    #     raise forms.ValidationError('Bu istifadəçi adı artıq mövcuddur.Yenisini yoxlayın!')
 
 
     def __init__(self, *args, **kwargs):
@@ -95,8 +88,6 @@ class LoginForm(forms.Form):
             if not user:
                 raise forms.ValidationError('Email or Password is incorrect')
 
-            # elif not user.is_guide:
-            #     raise forms.ValidationError('Email or Password is incorrect')
 
 
         return super(LoginForm, self).clean()
@@ -150,31 +141,21 @@ class FirstVerificationForm(forms.ModelForm):
 
 
 
-LANG_CHOICES = (('English', 'English'),('Azerbaijan', 'Azerbaijan'),)
-REG_CHOICES = (('Baku', 'Baku'),('Ganja', 'Ganja'),)
-
 
 
 class SecondVerificationForm(forms.ModelForm):
 
 
 
-    # first_name = forms.CharField(max_length=100,widget=forms.TextInput(attrs={
-    #     'type':'text',
-    #     'placeholder':'Enter your Name',
-    #     }
-    # ))
-
-    languages = forms.MultipleChoiceField(choices=LANG_CHOICES,widget=forms.SelectMultiple(attrs={
+    languages = forms.ModelMultipleChoiceField(queryset=Language.objects.all(),widget=forms.SelectMultiple(attrs={
         'class':'langSelect',
         'name':'languages',
         'id':'languages',
-        # 'empty_label':"-------------",
         'multiple': True
         }
     ))
 
-    regions = forms.MultipleChoiceField(choices=REG_CHOICES,widget=forms.SelectMultiple(attrs={
+    regions = forms.ModelMultipleChoiceField(queryset=Region.objects.all(),widget=forms.SelectMultiple(attrs={
         'class':'langSelect',
         'name':'regions',
         'id':'regions',
@@ -190,21 +171,11 @@ class SecondVerificationForm(forms.ModelForm):
 
         }
     ))
-    # image = forms.FileField(widget=forms.FileInput(
-    #     attrs={
-    #     'class':'hiden',
-    #     'type':'file',
-    #     'id':'file',
-    #     'name':'img',
-    #     'accept':'image/*'
-    #     }
-    # ))
+
 
 
     class Meta:
-        # widgets = {                          # Here
-        #     'phone': PhoneNumberPrefixWidget(initial='US'),
-        # }
+
         model = User
         fields = ('languages','regions','phone')
 
@@ -246,6 +217,7 @@ class UpdatePersonalForm(forms.ModelForm):
         attrs={
         'type':'text',
         'placeholder':'Enter your Email',
+        'readonly':True
 
         }
     ))
@@ -254,6 +226,7 @@ class UpdatePersonalForm(forms.ModelForm):
         attrs={
         'type':'text',
         'placeholder':'Enter your Last Name',
+        'readonly':True
 
         }
     ))

@@ -230,16 +230,18 @@ def third_finish_view(request):
     if request.method == 'POST':
         print("qaqa buradayam")
         form = SecondVerificationForm(request.POST, request.FILES or None, instance=usr)
+        form.fields['languages'].choices = list(form.fields['languages'].choices)
+
         print(form)
         if form.is_valid():
             print("indi de burda")
             user = form.save(commit=False)
             user.is_finished = True
             user.save()
+            form.save_m2m()
             return redirect('account:finish_success')
     else:
         form = SecondVerificationForm()
-
 
 
 

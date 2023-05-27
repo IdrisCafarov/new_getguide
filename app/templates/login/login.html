@@ -12,28 +12,10 @@
         </div>
 
         <div class="signup-main guideSide">
-          {% comment %} <div class="signup-media">
-            <a
-              target="_blank"
-              href="https://www.google.com/"
-              href=""
-              class="one-signup-media"
-            >
-              <img src="./images/google.png" />
-              <p>with Google</p>
-            </a>
-            <a
-              target="_blank"
-              href="https://www.facebook.com/"
-              class="one-signup-media"
-            >
-              <img src="./images/facebook.png" />
-              <p>with Facebook</p>
-            </a>
-          </div> {% endcomment %}
+
           <div class="sign-borders">
             <div class="sign-border"></div>
-            <p>or</p>
+            {% comment %} <p>or</p> {% endcomment %}
             <div class="sign-border"></div>
           </div>
           <form method="POST">
@@ -48,24 +30,7 @@
                 {{form.password|as_crispy_field}}
               </div>
             </div>
-            {% comment %} <div class="signAs">
-              <h3>Login as:</h3>
 
-              <ul>
-                <li>
-                  <input type="checkbox" id="guide" />
-                  <label for="guide">Guide</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="company" />
-                  <label for="company">Company</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="driver" />
-                  <label for="driver">Driver</label>
-                </li>
-              </ul>
-            </div> {% endcomment %}
             <div class="signup-terms login-forgotPass">
               <a href="{% url 'account:forgot_password' %}">Forgot password?</a>
             </div>
