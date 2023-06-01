@@ -606,6 +606,7 @@ header {
   margin-right: 20px;
 }
 .hero-total .heroInputs {
+  width: 85%;
   border-radius: 8px;
   padding: 13px 22px;
   background-color: #00000041;
@@ -616,7 +617,7 @@ header {
   margin: 0 38px;
 }
 .hero-total .heroInputs .heroInput {
-  width: 30%;
+  width: 35%;
   height: 48px;
   border-radius: 8px;
   display: flex;
@@ -944,7 +945,8 @@ span,
   border-radius: 12px;
 }
 .right-best-selling {
-  width: 35%;
+  width: 45%;
+  padding-left: 7%;
 }
 .right-best-selling p:first-of-type {
   font: normal 600 34px "Euclid SemiBold";
@@ -1057,6 +1059,8 @@ span,
 .largestProgram {
   margin: 0 auto;
   margin-top: 44px;
+  border: 1px solid red;
+  min-height: 110vh;
 }
 .largestHeader {
   text-align: center;

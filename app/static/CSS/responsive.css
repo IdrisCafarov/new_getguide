@@ -108,24 +108,24 @@
 }
 
 @media screen and (max-width: 920px) {
-    .achieve {
-      width: 126px;
-      height: 126px;
-    }
-    #line1 {
-      transform: scale(1.5);
-    }
-    #line2 {
-      transform: scale(1.5);
-    }
-    #line3 {
-      transform: scale(1.5);
-    }
-    .achieve p {
-        margin: 8px 0;
-        font-size: 15px;
-      }
-      .achieve h2 {
-        font: 30px "Euclid Medium";
-      }
+  .achieve {
+    width: 126px;
+    height: 126px;
   }
+  #line1 {
+    transform: scale(1.5);
+  }
+  #line2 {
+    transform: scale(1.5);
+  }
+  #line3 {
+    transform: scale(1.5);
+  }
+  .achieve p {
+    margin: 8px 0;
+    font-size: 15px;
+  }
+  .achieve h2 {
+    font: 30px "Euclid Medium";
+  }
+}
