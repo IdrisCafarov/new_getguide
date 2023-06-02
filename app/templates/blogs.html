@@ -1,52 +1,47 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block body %}
 
+<section class="breadcrumbs blogsPage">
+  <div class="breadcrumb myWrapper">
+    <p>Home</p>
+    <i class="fa-solid fa-chevron-right"></i>
+    <p>Blogs</p>
+  </div>
+  <div class="breadcrumbs-text myWrapper">
+    <p>Blogs</p>
+  </div>
+</section>
 
-{% block body %}
-
-    <section class="breadcrumbs blogsPage">
-      <div class="breadcrumb myWrapper">
-        <p>Home</p>
-        <i class="fa-solid fa-chevron-right"></i>
-        <p>Blogs</p>
+<div class="ourBlog blogsPage myWrapper">
+  <div class="blogs">
+    {% for blog in blogs %}
+    <!-- One Blog  -->
+    <div class="oneBlog">
+      <div class="blogImg">
+        <img src="{{blog.image.url}}" alt="" />
       </div>
-      <div class="breadcrumbs-text myWrapper">
-        <p>Blogs</p>
+      <div class="blogContent">
+        <h1>Help your team transition to remote with this essential guide</h1>
       </div>
-    </section>
-
-    <div class="ourBlog blogsPage myWrapper">
-      <div class="blogs">
-        {% for blog in blogs %}
-        <!-- One Blog  -->
-        <div class="oneBlog">
-          <div class="blogImg">
-            <img style="width:486px ;height:349px;object-fit:cover;" src="{{blog.image.url}}" alt="" />
-          </div>
-          <div class="blogContent">
-            <h1>
-              Help your team transition to remote with this essential guide
-            </h1>
-          </div>
-          <p class="blogDate">31 iyul, 2021</p>
-        </div>
-        <!-- One Blog End -->
-        {% endfor %}
-
-      <div class="paginationContainer">
-        <ul class="pagination">
-          <i class="fa-regular fa-chevron-left"></i>
-          <div class="pagNumbers">
-            <li>1</li>
-            <li>2</li>
-            <li class="active">3</li>
-            <li>4</li>
-            <li>...</li>
-            <li>12</li>
-          </div>
-          <i class="fa-regular fa-chevron-right"></i>
-        </ul>
-      </div>
+      <p class="blogDate">31 iyul, 2021</p>
     </div>
+    <!-- One Blog End -->
+    {% endfor %}
+  </div>
 
-    {% endblock body %}
+  <div class="paginationContainer">
+    <ul class="pagination">
+      <i class="fa-regular fa-chevron-left"></i>
+      <div class="pagNumbers">
+        <li>1</li>
+        <li>2</li>
+        <li class="active">3</li>
+        <li>4</li>
+        <li>...</li>
+        <li>12</li>
+      </div>
+      <i class="fa-regular fa-chevron-right"></i>
+    </ul>
+  </div>
+
+  {% endblock body %}
+</div>

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css" />
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" />
   <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+  <link rel="stylesheet" href="{% static './CSS/responsive.css' %}" />
   <!-- for calendar  -->
   <link rel="stylesheet" href="https://templates.iqonic.design/calendify/html/assets/css/backend.min.css?v=1.0.1" />
   <link rel="stylesheet"
@@ -27,7 +28,7 @@
 
 <body>
   <div class="main-header">
-    <div class="total container">
+    <div class="total totalContainer">
       <div class="left-nav">
         <div class="logo">
           <a href="/"><img src="{% static './images/Logo.png' %}" alt="loqo" /></a>
@@ -64,8 +65,8 @@
   {% block body %} {% endblock body %}
 
   <div class="footerContainer">
-    <div class="footerBorders">
-      <div class="footer myWrapper">
+    <div class="footerBorders" >
+      <div class="footer myWrapper"  style="width: 100%;">
         <div class="foot1">
           <div class="foot1Logo">
             <a href="./index.html"><img src="{% static './images/Logo.png' %}" alt="" /></a>

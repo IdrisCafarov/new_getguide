@@ -52,6 +52,7 @@ body {
   width: 85%;
   margin: 0 auto;
 }
+
 .myBtn {
   font-family: "Euclid Medium";
   background-color: var(--3366FF);
@@ -92,7 +93,11 @@ body {
   width: 85%;
   margin: 0 auto;
 }
-
+.totalContainer {
+  max-width: 1517px;
+  width: 85% !important;
+  margin: 0 auto;
+}
 /*sign up start*/
 
 .hide {
@@ -1010,13 +1015,16 @@ span,
   color: var(--2e3a59);
 }
 .ourBlog .blogs .oneBlog {
-  width: 30%;
+  width: 24%;
+  height: 460px;
   margin-top: 48px;
   border-radius: 8px;
   overflow: hidden;
 }
 .blogs .blogImg {
   width: 100%;
+  height: 70%;
+  object-fit: cover;
 }
 .blogs .blogImg img {
   object-fit: cover;
@@ -1130,6 +1138,7 @@ span,
   border-bottom: 1px solid;
   border-color: var(--e4e9f2);
 }
+
 .footerBorders {
   border-top: 1px solid;
   border-bottom: 1px solid;
@@ -1267,6 +1276,17 @@ span,
   );
   padding-top: 24px;
   height: 260px;
+}
+.breadcrumb.myWrapper {
+  margin-bottom: 0;
+}
+.breadcrumbs .breadcrumb {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.breadcrumbs .breadcrumb p {
+  margin-bottom: 0;
 }
 .breadcrumbs-text {
   display: flex;
