@@ -1,4 +1,6 @@
 @media screen and (max-width: 1600px) {
+  /* Home Start (1600)*/
+
   #line1 {
     position: absolute;
     transform: scale(3);
@@ -17,9 +19,13 @@
     left: 77%;
     top: 45%;
   }
+
+  /* Home End(1600)*/
 }
 
 @media screen and (max-width: 1450px) {
+  /* Home Start (1450)*/
+
   #line1 {
     transform: scale(2.8);
   }
@@ -29,9 +35,14 @@
   #line3 {
     transform: scale(2.8);
   }
+  /* Home End(1450)*/
 }
 
 @media screen and (max-width: 1400px) {
+  /* Home Start(1400)*/
+  .hero-total .hero-text h1 {
+    font-size: 50px;
+  }
   #line1 {
     transform: scale(2.6);
   }
@@ -41,8 +52,51 @@
   #line3 {
     transform: scale(2.6);
   }
+  .left-best-selling {
+    width: 35%;
+    position: relative;
+  }
+  .pink-linear {
+    width: 300px;
+    height: 220px;
+  }
+  .best-video {
+    width: 400px;
+    height: 250px;
+    left: 20px;
+    bottom: 20px;
+  }
+  .largestBodyImg .textBox {
+    position: absolute;
+    bottom: -17%;
+    left: 7%;
+    background-color: var(--white);
+    width: 37%;
+    padding: 20px 44px 40px 12px;
+  }
+  .largestProgramBody .textBox h1 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+  .largestProgramBody .textBox p {
+    margin: 25px 0 27px 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .largestProgramBody button {
+    padding: 12px 18px;
+  }
+  .textBox .circle {
+    width: 180px;
+    height: 180px;
+    right: -15%;
+    bottom: -20%;
+  }
+  /* Home End(1400)*/
 }
 @media screen and (max-width: 1300px) {
+  /* Home Start(1300)*/
+
   #line1 {
     transform: scale(2.4);
   }
@@ -51,34 +105,102 @@
   }
   #line3 {
     transform: scale(2.4);
+  }
+  /* Home End(1300)*/
+
+  .userSelectBtns {
+    margin: 40px 0 !important;
+  }
+
+  .hero-total .heroInputs {
+    width: 90%;
+    padding: 10px 19px;
+  }
+  .hero-total .heroInputs .heroInput:nth-child(2) {
+    margin: 0 30px;
+  }
+  .hero-total .heroInputs .heroInput {
+    width: 35%;
   }
 }
 
 @media screen and (max-width: 1250px) {
   #line1 {
-    transform: scale(2);
+    transform: scale(1.8);
   }
   #line2 {
-    transform: scale(2);
+    transform: scale(1.8);
   }
   #line3 {
-    transform: scale(2);
-    left: 75%;
+    transform: scale(1.8);
   }
 }
 
-@media screen and (max-width: 1250px) {
-  #line1 {
-    transform: scale(1.8);
+@media screen and (max-width: 1200px) {
+  .nav {
+    display: flex;
+    gap: 40px;
   }
-  #line2 {
-    transform: scale(1.8);
+  .left-nav {
+    width: 65%;
   }
-  #line3 {
-    transform: scale(1.8);
+  .hero-text h1 {
+    font-size: 40px !important;
+  }
+
+  .left-best-selling {
+    width: 35%;
+    position: relative;
+  }
+  .pink-linear {
+    width: 300px;
+    height: 220px;
+  }
+  .best-video {
+    width: 370px;
+    height: 220px;
+    left: 20px;
+    bottom: 50px;
+  }
+  .right-best-selling {
+    width: 47%;
+    padding-left: 10%;
+  }
+  .right-best-selling p:first-of-type {
+    font: normal 600 28px "Euclid SemiBold";
+  }
+  .right-best-selling p:last-of-type {
+    font: normal 400 16px "Euclid Regular";
+    margin: 15px 0 10px 0;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .hero-total .heroInputs {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  .hero-total .heroInputs .heroInput:nth-child(2) {
+    margin: 0 25px;
+  }
+  .hero-total .heroInputs .heroInput {
+    width: 37%;
+  }
+  .hero {
+    height: 700px;
+    /* background: linear-gradient(90.19deg, #59acfb 0.08%, #7d54fd 99.76%); */
+    background-image: url("../images/bakuGradient.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 @media screen and (max-width: 1050px) {
+  /* Home Start(1050)*/
+
   .achieve {
     /* text-align: center; */
     width: 146px;
@@ -92,6 +214,8 @@
 }
 
 @media screen and (max-width: 980px) {
+  /* Home Start(980)*/
+
   .achieve {
     width: 136px;
     height: 136px;
@@ -108,6 +232,8 @@
 }
 
 @media screen and (max-width: 920px) {
+  /* Home Start(920)*/
+
   .achieve {
     width: 126px;
     height: 126px;

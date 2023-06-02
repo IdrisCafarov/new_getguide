@@ -1059,7 +1059,6 @@ span,
 .largestProgram {
   margin: 0 auto;
   margin-top: 44px;
-  border: 1px solid red;
   min-height: 110vh;
 }
 .largestHeader {
