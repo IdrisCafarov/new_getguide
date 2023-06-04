@@ -201,6 +201,32 @@
     font: normal 400 16px "Euclid Regular";
     margin: 15px 0 10px 0;
   }
+
+  /* My Profile Page  */
+  .myProfileContainer .navigation {
+    /* width: 60px; */
+    /* padding: 37px 13px; */
+    /* padding-bottom: 10px; */
+    /* background: var(--3366FF); */
+    /* border-radius: 47px; */
+    top: 200px;
+    left: 2.7%;
+  }
+
+  /* Calendar  */
+  /* Container 90% (1200) */
+  .aboutContainer {
+    width: 90%;
+  }
+  .footer {
+    width: 90% !important;
+  }
+  .totalContainer {
+    width: 90% !important;
+  }
+  .myProfileContainer .contForNav {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 1140px) {
   .container {
@@ -224,6 +250,26 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  /* Calendar (1140)  */
+  .myProfileInner.calendarPage {
+    padding: 60px 70px;
+  }
+  .calendarBody .calendar {
+    padding: 30px 30px 0;
+  }
+  /* Notification side (1140)  */
+  .myProfileInner.notificationPage {
+    padding: 60px 70px;
+  }
+  .notificationBody .notificationLeft {
+    width: 45%;
+  }
+  .notificationLeft .not {
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    padding: 16px 16px;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 1050px) {
@@ -281,5 +327,120 @@
   }
   .achieve h2 {
     font: 30px "Euclid Medium";
+  }
+}
+
+@media screen and (max-width: 890px) {
+  /* my profile page(890)  */
+
+  .profileBody form {
+    width: 100%;
+  }
+  .myProfileInner .profileBody .profileInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .myProfileInner .profileBody form label {
+    width: 100%;
+  }
+  .myProfileInner .profileBody form label:nth-child(3),
+  .myProfileInner .profileBody form label:nth-child(4) {
+    margin-top: 24px;
+  }
+  .myProfileInner .profileBody form label p {
+    font: 12px "Euclid Regular";
+    line-height: 16px;
+    color: var(--2E3A59);
+    margin-bottom: 8px;
+    border-radius: 2px solid var(--black);
+  }
+  .myProfileInner .profileBody form input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--f7f9fc);
+    border: 1px solid var(--e4e9f2);
+    border-radius: 8px;
+    outline: none;
+  }
+  .myProfileInner .profileBtn {
+    width: 100%;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .myProfileInner .profileBtn i {
+    margin-right: 10px;
+  }
+
+  /* Calendar  */
+  .myProfileInner.calendarPage {
+    padding: 50px 20px 50px 60px;
+  }
+
+  /* Notification side(890) */
+
+  .myProfileInner .notificationBody {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .notificationBody .notificationLeft {
+    width: 100%;
+    margin: 0 auto;
+    max-height: 350px;
+    overflow-y: scroll;
+  }
+  .notificationLeft .not {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    padding: 16px 16px;
+    cursor: pointer;
+  }
+  .notificationBody .notificationRight {
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+  }
+  .secondProfile .secondProfileBody {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* my profile page(800) */
+  .myProfileInner.personalInfo {
+    padding: 30px 30px 30px 50px;
+  }
+  .myProfileInner .profileHeaderTop {
+    margin-bottom: 20px;
+  }
+  .myProfileInner .profileBody {
+    width: 100%;
+  }
+
+  .myProfileContainer .contForNav {
+    width: 92%;
+  }
+
+  .myProfileContainer .navigation {
+    width: 50px;
+    padding: 30px 13px;
+    /* padding-bottom: 10px; */
+    /* background: var(--3366FF); */
+    /* border-radius: 47px; */
+    top: 200px;
+    left: 1%;
+  }
+
+  /* Calendar(800) */
+  .myProfileInner.calendarPage {
+    padding: 40px 20px 40px 50px;
+  }
+
+  /* Notification side (800)  */
+  .myProfileInner.notificationPage {
+    padding: 40px 50px;
   }
 }

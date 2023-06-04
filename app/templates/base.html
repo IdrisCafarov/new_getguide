@@ -24,6 +24,8 @@
     href="https://templates.iqonic.design/calendify/html/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
   <!-- Simple Calendar  -->
   <link rel="stylesheet" href="{% static './CSS/calendar.css' %}?{% now "U" %}" />
+  {% comment %} Multi Languages  {% endcomment %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
 </head>
 
 <body>
@@ -66,7 +68,7 @@
 
   <div class="footerContainer">
     <div class="footerBorders" >
-      <div class="footer myWrapper"  style="width: 100%;">
+      <div class="footer myWrapper">
         <div class="foot1">
           <div class="foot1Logo">
             <a href="./index.html"><img src="{% static './images/Logo.png' %}" alt="" /></a>
@@ -121,6 +123,12 @@
 
   <!-- app JavaScript -->
   <script src="{% static './JS/myProfile.js' %}"></script>
+
+  {% comment %} Multi Languages  {% endcomment %}
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+      new MultiSelectTag('languages') 
+  </script>
 </body>
 
 </html>

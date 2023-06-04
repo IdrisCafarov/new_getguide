@@ -32,7 +32,9 @@
             /></a>
           </div>
           <ul class="nav whiteNav homeNav">
-            {% comment %} <li><a href="./guides.html">Tour Guides</a></li> {% endcomment %}
+            {% comment %}
+            <li><a href="./guides.html">Tour Guides</a></li>
+            {% endcomment %}
             <!-- <li><a href="#">Partners</a></li> -->
             <li><a href="{% url 'product:blogs' %}">Blogs</a></li>
             <li><a href="{% url 'product:about' %}">About Us</a></li>
@@ -71,7 +73,8 @@
     <section class="hero">
       <div class="container">
         <div class="hero-total">
-          <img class="busImage" src="../static/images/bus.png" alt="" />
+          <!-- <img class="busImage" src="../static/images/bus.png" alt="" /> -->
+          <img class="busImage" src="../static/images/prius.png" alt="" />
           <div class="hero-text">
             <h1>Lorem ipsum dolor sit amet mamed</h1>
           </div>
@@ -165,7 +168,8 @@
     <!-- Section 2 End  -->
 
     <!-- Section 3 Start  -->
-    {% comment %} <section class="Guides">
+    {% comment %}
+    <section class="Guides">
       <div class="container">
         <div class="heading">
           <h2>Our Guides</h2>
@@ -199,7 +203,8 @@
           ><i class="fa-solid fa-angle-right"></i>
         </div>
       </div>
-    </section> {% endcomment %}
+    </section>
+    {% endcomment %}
     <!-- Section 3 End  -->
 
     <!-- Section 4 Start  -->
@@ -239,20 +244,21 @@
         <!-- One Blog  -->
         <div class="oneBlog">
           <div class="blogImg">
-            <img style="width:486px ;height:349px;object-fit:cover;" src="{{blog.image.url}}" alt="" />
+            <img
+              style="width: 486px; height: 349px; object-fit: cover"
+              src="{{blog.image.url}}"
+              alt=""
+            />
           </div>
           <div class="blogContent">
             <h1>
-              <a href="www.google.com">
-              {{blog.name}}
-              </a>
+              <a href="www.google.com"> {{blog.name}} </a>
             </h1>
           </div>
           <p class="blogDate">{{blog.created_date|date:"d M, Y"}}</p>
         </div>
         <!-- One Blog End -->
         {% endfor %}
-
       </div>
       <div class="forBtn">
         <a href="./blogs.html" id="addBlogs">

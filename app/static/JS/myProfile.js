@@ -47,3 +47,28 @@ oneNotification.forEach((e) => {
     displayNotification.textContent = e.firstElementChild.textContent;
   });
 });
+
+// personal info and profile
+let firstProfile = document.querySelector(".firstProfile");
+let secondProfile = document.querySelector(".secondProfile");
+let infoSide = document.getElementById("infoSide");
+let profileSide = document.getElementById("profileSide");
+let accessSides = document.querySelectorAll(".profileHeaderTop p");
+[...accessSides].map((p) => {
+  p.addEventListener("click", (e) => {
+    [...accessSides].forEach((a) => {
+      if (a.classList.contains("prHeadActive")) {
+        a.classList.remove("prHeadActive");
+      }
+    });
+    e.target.classList.add("prHeadActive");
+    // Show & Hide Sides
+    if (infoSide.classList.contains("prHeadActive")) {
+      secondProfile.classList.add("none");
+      firstProfile.classList.remove("none");
+    } else if (profileSide.classList.contains("prHeadActive")) {
+      secondProfile.classList.remove("none");
+      firstProfile.classList.add("none");
+    }
+  });
+});
