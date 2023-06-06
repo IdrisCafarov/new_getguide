@@ -32,9 +32,9 @@
             /></a>
           </div>
           <ul class="nav whiteNav homeNav">
-            {% comment %}
-            <li><a href="./guides.html">Tour Guides</a></li>
-            {% endcomment %}
+
+            <li><a href="{% url 'product:search_results' %}">Search Results</a></li>
+
             <!-- <li><a href="#">Partners</a></li> -->
             <li><a href="{% url 'product:blogs' %}">Blogs</a></li>
             <li><a href="{% url 'product:about' %}">About Us</a></li>
