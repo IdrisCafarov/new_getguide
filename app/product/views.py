@@ -46,4 +46,9 @@ def BlogView(request):
     return render(request,"blogs.html",context)
 
 
+def SearchResults(request):
+
+    return render(request,"searchResults.html")
+
+
 

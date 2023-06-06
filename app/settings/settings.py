@@ -168,13 +168,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 PHONENUMBER_DEFAULT_REGION = "AZ"
 
-DEFAULT_FROM_EMAIL = 'support@getguide.az'
-SERVER_EMAIL = 'support@getguide.az'
+DEFAULT_FROM_EMAIL = 'connect@4youkid.com'
+SERVER_EMAIL = 'connect@4youkid.com'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'support@getguide.az'
-EMAIL_HOST_PASSWORD = 'valncumomeqpbufv'
+EMAIL_HOST_USER = 'connect@4youkid.com'
+EMAIL_HOST_PASSWORD = 'uetiylsnwxdlvnbj'
 EMAIL_PORT = 465
 
 
