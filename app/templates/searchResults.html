@@ -1,12 +1,214 @@
-{% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if user.is_authenticated %}
+    <meta name="csrf-token" content="{{ csrf_token }}" />
+    {% endif %}
 
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static './CSS/style.css' %}" />
+    <link rel="stylesheet" href="{% static './CSS/responsive.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css"
+    />
+    <link rel="stylesheet" href="{% static './CSS/guideRegion.css' %}" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="total container">
+        <div class="left-nav">
+          <div class="logo">
+            <a href="./index.html"
+              ><img src="{% static './images/whitelogo.png' %}" alt="loqo"
+            /></a>
+          </div>
+          <ul class="nav whiteNav homeNav">
+            <li>
+              <a href="{% url 'product:search_results' %}">Search Results</a>
+            </li>
 
+            <!-- <li><a href="#">Partners</a></li> -->
+            <li><a href="{% url 'product:blogs' %}">Blogs</a></li>
+            <li><a href="{% url 'product:about' %}">About Us</a></li>
+            <li class="FAQ">
+              <a href="{% url 'product:faq' %}"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <ul class="right-nav">
+          <div class="main-right-nav">
+            <div class="main-lang">
+              Az
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div class="headerProfile">
+              <a href="{% url 'account:my_profile' %}">
+                <img src="{{request.user.get_avatar}}" alt="" />
+              </a>
+            </div>
+            {% else %}
+            <a href="{% url 'account:login' %}">Log in</a>
+            <button class="sign">
+              <a href="{% url 'account:register' %}">Sign Up</a>
+            </button>
+            {% endif %}
+          </div>
+        </ul>
+      </div>
+    </header>
+    <!-- Header End -->
 
-{% block body %}
+    <!-- Section 1 Start  -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-total">
+          <!-- <img class="busImage" src="../static/images/bus.png" alt="" /> -->
+          <img class="busImage" src="../static/images/prius.png" alt="" />
+          <div class="hero-text">
+            <h1>Lorem ipsum dolor sit amet mamed</h1>
+          </div>
+          <div class="userSelectBtns">
+            <button id="guideBtn" class="myBtn selectedBtn">GUIDE</button>
+            <button id="driverBtn" class="myBtn">DRIVER</button>
+          </div>
+          <form class="heroInputs forGuide">
+            <label class="heroInput">
+              <i class="fa-sharp fa-light fa-house-tree fa-lg"></i>
+              <select class="regionSelect" name="regions" id="regions" multiple>
+                <option value="agsu">Agsu</option>
+                <option value="shabran">Shabran</option>
+                <option value="goranboy">Goranboy</option>
+                <option value="hajiqabul">Hajiqabul</option>
+                <option value="masally">Masally</option>
+                <option value="gobustan">Gobustan</option>
+              </select>
+            </label>
+            <label for="" class="heroInput">
+              <i class="fa-sharp fa-solid fa-globe"></i>
+              <select
+                class="langSelect"
+                name="languages"
+                id="languages"
+                multiple
+              >
+                <option value="english">English</option>
+                <option value="azerbaijan">Azerbaijan</option>
+                <option value="russian">Russian</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="arabic">Arabic</option>
+                <option value="bengali">Bengali</option>
+              </select>
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-calendar-days fa-lg"></i>
+              <input type="date" placeholder="Date" />
+            </label>
+            <button class="myBtn">Get Started</button>
+          </form>
+          <div class="heroInputs forDriver none">
+            <label class="heroInput">
+              <i class="fa-sharp fa-light fa-house-tree fa-lg"></i>
+              <input type="text" placeholder="Region" />
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-users"></i>
+              <input type="number" placeholder="Number of people" />
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-calendar-days fa-lg"></i>
+              <input type="date" placeholder="Date" />
+            </label>
+            <button class="myBtn">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section 1 End  -->
 
+    <!-- Search Results Start  -->
+    <section class="achievements"></section>
+    <!-- Search Results End  -->
 
+    <div class="footerContainer">
+      <div class="footerBorders">
+        <div class="footer myWrapper">
+          <div class="foot1">
+            <div class="foot1Logo">
+              <a href="./index.html"
+                ><img src="{% static './images/Logo.png' %}" alt=""
+              /></a>
+            </div>
+            <div class="foot1Socials">
+              <a href="" id="fb"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a href="" id="insta"><i class="fa-brands fa-instagram"></i></a>
+              <a href="" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="foot2">
+            <h2>Customer Care</h2>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">Size Guide</a></p>
+            <p><a href="">My Order</a></p>
+            <p><a href=""> My Account </a></p>
+          </div>
+          <div class="foot3">
+            <h2>Shipping & Returns</h2>
+            <p><a href="">Shipping</a></p>
+            <p><a href="">Track Your Order</a></p>
+            <p><a href="">Returns and exchanges</a></p>
+            <p class="footerFaq">
+              <a href="./faq.html"
+                >FAQ <i class="fa-light fa-comments-question"></i
+              ></a>
+            </p>
+          </div>
+          <div class="foot4">
+            <h2>Corporate</h2>
+            <p><a href="">Careers</a></p>
+            <p><a href="">Social Responsibility</a></p>
+            <p><a href="">Reseller</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="myWrapper">
+        <div class="copyright">
+          <i class="fa-light fa-copyright"></i>
+          2022 Getguide all rights reserved
+        </div>
+      </div>
+    </div>
 
+    <script src="{% static './JS/app.js' %}"></script>
+    <script src="{% static './JS/hero.js' %}"></script>
 
-{% endblock body %}
+    <!-- Multi Languages  -->
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+      new MultiSelectTag("languages");
+      new MultiSelectTag("regions");
+    </script>
+
+    <script src="{% static './JS/guideRegion.js' %}"></script>
+  </body>
+</html>

@@ -574,6 +574,9 @@ header {
 .heroInputs.forDriver.none {
   display: none;
 }
+.heroInputs.forDriver i {
+  color: #23b1db;
+}
 .heroInputs.forGuide.none {
   display: none;
 }
@@ -611,18 +614,22 @@ header {
   margin-right: 20px;
 }
 .hero-total .heroInputs {
-  width: 85%;
+  width: 100%;
   border-radius: 8px;
   padding: 13px 22px;
   background-color: #00000041;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.heroInputs .myBtn {
+  padding: 14px 25px;
 }
 .hero-total .heroInputs .heroInput:nth-child(2) {
   margin: 0 38px;
 }
 .hero-total .heroInputs .heroInput {
-  width: 35%;
+  width: 26%;
   height: 48px;
   border-radius: 8px;
   display: flex;
@@ -638,7 +645,20 @@ header {
   border: 0;
   border-radius: 8px;
 }
+.heroInputs .mult-select-tag {
+  padding: 0 10px;
+}
+.mult-select-tag .btn-container {
+  padding: 0 5px !important;
+}
+.mult-select-tag .body.rounded {
+  border: 0;
+}
 
+.forGuide label i {
+  color: #1a71ff;
+  font-size: 18px;
+}
 .heading {
   padding: 50px 0;
   display: flex;

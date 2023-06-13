@@ -20,6 +20,11 @@
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css"
+    />
+    <link rel="stylesheet" href="{% static './CSS/guideRegion.css' %}" />
   </head>
   <body>
     <!-- Header Start -->
@@ -32,8 +37,9 @@
             /></a>
           </div>
           <ul class="nav whiteNav homeNav">
-
-            <li><a href="{% url 'product:search_results' %}">Search Results</a></li>
+            <li>
+              <a href="{% url 'product:search_results' %}">Search Results</a>
+            </li>
 
             <!-- <li><a href="#">Partners</a></li> -->
             <li><a href="{% url 'product:blogs' %}">Blogs</a></li>
@@ -82,38 +88,54 @@
             <button id="guideBtn" class="myBtn selectedBtn">GUIDE</button>
             <button id="driverBtn" class="myBtn">DRIVER</button>
           </div>
-          <div class="heroInputs forGuide">
-            <div class="heroInput">
-              <i
-                class="fa-sharp fa-light fa-house-tree fa-lg"
-                style="color: #1a71ff"
-              ></i>
-              <input type="text" placeholder="Region" />
-            </div>
-            <div class="heroInput">
-              <i
-                class="fa-solid fa-calendar-days fa-lg"
-                style="color: #1a71ff"
-              ></i>
-              <input type="text" placeholder="Date" />
-            </div>
+          <form class="heroInputs forGuide">
+            <label class="heroInput">
+              <i class="fa-sharp fa-light fa-house-tree fa-lg"></i>
+              <select class="regionSelect" name="regions" id="regions" multiple>
+                <option value="agsu">Agsu</option>
+                <option value="shabran">Shabran</option>
+                <option value="goranboy">Goranboy</option>
+                <option value="hajiqabul">Hajiqabul</option>
+                <option value="masally">Masally</option>
+                <option value="gobustan">Gobustan</option>
+              </select>
+            </label>
+            <label for="" class="heroInput">
+              <i class="fa-sharp fa-solid fa-globe"></i>
+              <select
+                class="langSelect"
+                name="languages"
+                id="languages"
+                multiple
+              >
+                <option value="english">English</option>
+                <option value="azerbaijan">Azerbaijan</option>
+                <option value="russian">Russian</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="arabic">Arabic</option>
+                <option value="bengali">Bengali</option>
+              </select>
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-calendar-days fa-lg"></i>
+              <input type="date" placeholder="Date" />
+            </label>
             <button class="myBtn">Get Started</button>
-          </div>
+          </form>
           <div class="heroInputs forDriver none">
-            <div class="heroInput">
-              <i
-                class="fa-sharp fa-light fa-house-tree fa-lg"
-                style="color: #23b1db"
-              ></i>
+            <label class="heroInput">
+              <i class="fa-sharp fa-light fa-house-tree fa-lg"></i>
               <input type="text" placeholder="Region" />
-            </div>
-            <div class="heroInput">
-              <i
-                class="fa-solid fa-calendar-days fa-lg"
-                style="color: #23b1db"
-              ></i>
-              <input type="text" placeholder="Date" />
-            </div>
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-users"></i>
+              <input type="number" placeholder="Number of people" />
+            </label>
+            <label class="heroInput">
+              <i class="fa-solid fa-calendar-days fa-lg"></i>
+              <input type="date" placeholder="Date" />
+            </label>
             <button class="myBtn">Get Started</button>
           </div>
         </div>
@@ -346,5 +368,14 @@
 
     <script src="{% static './JS/app.js' %}"></script>
     <script src="{% static './JS/hero.js' %}"></script>
+
+    <!-- Multi Languages  -->
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+      new MultiSelectTag("languages");
+      new MultiSelectTag("regions");
+    </script>
+
+    <script src="{% static './JS/guideRegion.js' %}"></script>
   </body>
 </html>
