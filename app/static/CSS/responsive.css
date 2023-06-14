@@ -104,6 +104,9 @@
   /* Blog Page End(1400)*/
 }
 @media screen and (max-width: 1300px) {
+  .gdResults .gdCard {
+    width: 24%;
+  }
   .breadcrumbs {
     height: 220px;
   }
@@ -166,6 +169,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .gdCard .gdImg {
+    width: 100%;
+    height: 300px;
+  }
   .nav {
     display: flex;
     gap: 40px;
@@ -273,15 +280,12 @@
     cursor: pointer;
   }
 }
+
 @media screen and (max-width: 1050px) {
-  .hero-total .heroInputs .heroInput:nth-child(2) {
-    margin: 0 5px;
+  .gdCard .gdImg {
+    width: 100%;
+    height: 240px;
   }
-  .hero-total .heroInputs .heroInput {
-    width: 20%;
-  }
-}
-@media screen and (max-width: 1050px) {
   /* Home Start(1050)*/
 
   .achieve {
@@ -293,6 +297,18 @@
     /* justify-content: center; */
     /* border-radius: 50%; */
     /* position: relative; */
+  }
+
+  .heroInputs {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-total .heroInputs .heroInput {
+    width: 80%;
+    margin-top: 20px !important;
+  }
+  .hero-total .heroInputs .myBtn {
+    margin-top: 20px;
   }
 }
 
@@ -312,9 +328,62 @@
   #line3 {
     transform: scale(1.5);
   }
+
+  /* Home Best Sellin(980)*/
+  .left-best-selling {
+    width: 40%;
+    position: relative;
+  }
+  .pink-linear {
+    width: 300px;
+    height: 220px;
+  }
+  .best-video {
+    width: 370px;
+    height: 220px;
+    left: 10px;
+    bottom: 20px;
+  }
+  .right-best-selling {
+    width: 47%;
+    padding-left: 10%;
+  }
+  /* Home Best Sellin End(980)*/
+
+  /* Blog Page Start(980)*/
+  .ourBlog .blogs .oneBlog {
+    width: 48%;
+    height: 380px;
+    margin-top: 40px;
+  }
+  /* Blog Page End(980)*/
+
+  .breadcrumbs {
+    height: 130px;
+  }
+  .breadcrumbs-text p {
+    font-size: 44px !important;
+  }
+  .breadcrumbs-text p {
+    font-size: 35px !important;
+  }
+
+  .ProjectLeft .first,
+  .ProjectRight .second {
+    padding: 15px;
+  }
 }
 
 @media screen and (max-width: 920px) {
+  .gdResults .gdCard {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .gdCard .gdImg {
+    width: 100%;
+    height: 300px;
+  }
+
   /* Home Start(920)*/
 
   .achieve {

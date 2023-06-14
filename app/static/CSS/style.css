@@ -629,7 +629,7 @@ header {
   margin: 0 38px;
 }
 .hero-total .heroInputs .heroInput {
-  width: 26%;
+  width: 24%;
   height: 48px;
   border-radius: 8px;
   display: flex;
@@ -647,6 +647,10 @@ header {
 }
 .heroInputs .mult-select-tag {
   padding: 0 10px;
+}
+.mult-select-tag .body.rounded .input-container {
+  padding-left: 15px;
+  overflow: hidden;
 }
 .mult-select-tag .btn-container {
   padding: 0 5px !important;
@@ -693,15 +697,25 @@ header {
   border-radius: 15px;
   overflow: hidden;
   background-color: #fdfdfd;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.gdResults .gdCard:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.gdResults .gdCard:hover .gdImg img {
+  transform: scale(1.05);
 }
 .gdCard .gdImg {
   width: 100%;
   height: 320px;
+  overflow: hidden;
 }
 .gdImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.4s;
 }
 .gdCard .gdContent {
   padding: 10px;
@@ -1079,15 +1093,14 @@ span,
 }
 .ourBlog .blogs .oneBlog {
   width: 24%;
-  height: 460px;
   margin-top: 48px;
   border-radius: 8px;
-  overflow: hidden;
+  height: fit-content;
 }
 .blogs .blogImg {
-  width: 100%;
-  height: 70%;
+  width: 100% !important;
   object-fit: cover;
+  height: 280px !important;
 }
 .blogs .blogImg img {
   object-fit: cover;
@@ -1096,12 +1109,14 @@ span,
 }
 .blogContent h1 {
   text-align: left;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
 }
 .oneBlog .blogDate {
   font-family: "Euclid Regular";
   font-size: 14px;
-  line-height: 20px;
   color: var(--8f9bb3);
+  margin-bottom: 0px;
 }
 
 #addBlogs {
