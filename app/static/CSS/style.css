@@ -677,6 +677,49 @@ header {
   padding: 16px 0;
 }
 
+/* Home Search Results Page  */
+.searchResults {
+  padding: 50px 0;
+}
+.searchResults .gdResults {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Euclid Light";
+}
+.gdResults .gdCard {
+  width: 23%;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fdfdfd;
+}
+.gdCard .gdImg {
+  width: 100%;
+  height: 320px;
+}
+.gdImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gdCard .gdContent {
+  padding: 10px;
+}
+.gdCard .gdContent div {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+}
+.nameCont i,
+.langCont i {
+  color: #3366ff;
+}
+.rateCont i {
+  color: darkorange;
+}
+/* Home Search Results Page End ------- */
+
 /* Home Section 1 End -----------------  */
 
 /* Home Section 2 (Achievement) */
